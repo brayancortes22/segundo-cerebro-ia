@@ -41,6 +41,7 @@ Bienvenido, **Brayan Stid Cortés Lombana** (`bscl`). Esta es tu base de conocim
   * 👥 [[Sistemas Multiagente (Arquitectura, Orquestacion y Patrones)]]: Orquestación, patrón Supervisor/Worker, Actor-Critic, LangGraph y CrewAI.
   * 📚 [[Documentacion Universal de Lenguajes]]: Referencia rápida y APIs oficiales de cualquier lenguaje.
 * 🤖 **[[Colaboracion con IA (Antigravity)]]**: Guía de cómo trabajar juntos con máxima eficiencia.
+  * ⚡ [[Multiagentes en Antigravity IDE (Flujo de Trabajo Exponencial)]]: Despliegue de agentes paralelos, subagentes autónomos y testing con browser.
 * 📱 **[[Android Accessibility Service]]**: Conceptos de intercepción de teclas D-Pad en Android.
 
 ---
