@@ -80,6 +80,8 @@ graph TD
 
 ### 6. ⚙️ Núcleo, Referencias y Customizaciones
 * **[[Documentacion Universal de Lenguajes]]**: Especificaciones oficiales, estándares modernos y cheat sheets de cualquier lenguaje (Java, Python, TS, PHP, Go, Rust, SQL).
+* **[[Seguridad de Datos, Habeas Data y Privacidad Legal]]**:
+  * `data-security-privacy`: Cumplimiento de Habeas Data (Ley 1581 Colombia / SIC), GDPR, consentimiento explícito, encriptación en reposo y tránsito, audit logs y blindaje legal anti-demandas.
 * **[[Agy Customizations & Extension]]**:
   * `antigravity-guide`: Manual de comandos de terminal `agy`, atajos de teclado y workflows de IDE.
   * `agy-customizations`: Cómo crear nuevos *Skills*, reglas personalizadas (`GEMINI.md`) o plugins para entrenarme en tus propios proyectos.

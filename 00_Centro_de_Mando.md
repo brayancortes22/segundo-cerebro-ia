@@ -39,6 +39,7 @@ Bienvenido, **Brayan Stid Cortés Lombana** (`bscl`). Esta es tu base de conocim
   * 🗄️ [[Diseno y Optimizacion de Bases de Datos]]: Normalización, índices, N+1, réplicas y Redis.
   * 🧠 [[Redes Neuronales y Deep Learning]]: Perceptrón, Backpropagation, CNN, Transformers y Fine-Tuning.
   * 👥 [[Sistemas Multiagente (Arquitectura, Orquestacion y Patrones)]]: Orquestación, patrón Supervisor/Worker, Actor-Critic, LangGraph y CrewAI.
+  * 🛡️ [[Seguridad de Datos, Habeas Data y Privacidad Legal]]: Marco normativo Ley 1581 (Habeas Data Colombia / SIC), GDPR, cifrado y blindaje legal anti-demandas.
   * 📚 [[Documentacion Universal de Lenguajes]]: Referencia rápida y APIs oficiales de cualquier lenguaje.
 * 🤖 **[[Colaboracion con IA (Antigravity)]]**: Guía de cómo trabajar juntos con máxima eficiencia.
   * ⚡ [[Multiagentes en Antigravity IDE (Flujo de Trabajo Exponencial)]]: Despliegue de agentes paralelos, subagentes autónomos y testing con browser.
