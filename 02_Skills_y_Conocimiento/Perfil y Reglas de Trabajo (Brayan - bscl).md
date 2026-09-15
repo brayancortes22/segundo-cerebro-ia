@@ -61,6 +61,13 @@ gitGraph
     - Componentes visuales pequeños y desacoplados (*Smart vs Dumb Components*).
 * **Acción obligatoria:** En cuanto un archivo comience a acumular demasiada lógica o líneas, refactorizarlo y separarlo de inmediato.
 
+### 5. ⚡ Cero Código Quemado (No Hardcoding) y Dinamismo Absoluto
+* **Principio:** Prohibido quemar valores, textos, IDs fijos o porcentajes en el código fuente.
+  * **Configuración por Inquilino:** Cada restaurante administra sus propios impuestos (IVA/Impoconsumo), monedas, textos de facturas, horarios y propinas desde la base de datos.
+  * **Enums Tipados (PHP 8.3 Backed Enums):** Estados de mesas (`TableStatus`), estados de comandas (`OrderStatus`), medios de pago (`PaymentMethod`) y roles (`UserRole`) se manejan con Enums estrictos, nunca strings mágicos repetidos.
+  * **Config & Environment:** Todo parámetro de conexión, URLs de endpoints de la DIAN/Factus o credenciales se maneja exclusivamente a través de `config()` y `.env`.
+  * **Vistas Dinámicas:** Componentes frontend que se construyen dinámicamente según la respuesta del servidor sin tablas fijas ni opciones cableadas.
+
 ---
 
 ## 🎯 Proyectos Bajo Dirección de Brayan (`bscl`)

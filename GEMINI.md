@@ -40,3 +40,15 @@
   - En Backend (Laravel/Node): usar **Action Classes** (un caso de uso por clase), **Service Layer**, **Form Requests** para validación aislada y **DTOs**, evitando controladores sobrecargados (*Skinny Controllers*).
   - En Frontend (React/Blade): desacoplar lógica en **Custom Hooks** o servicios, y dividir vistas en componentes pequeños reutilizables (*Smart vs Dumb Components*).
   - Si una clase o componente empieza a crecer o asumir más de una responsabilidad, refactorizarla y dividirla de inmediato.
+
+### 6. Cero Código "Quemado" (No Hardcoding) y Dinamismo Absoluto
+* **PROHIBIDO** quemar (hardcodear) en el código:
+  - IDs de registros (ej. `if ($user->id == 1)` o `find(5)` ❌).
+  - Nombres de negocio, textos de tickets, URLs absolutas o rutas estáticas.
+  - Valores mágicos numéricos (Magic Numbers) sin constantes o enums con significado.
+  - Porcentajes de impuestos, monedas o tasas fijas dentro de la lógica de negocio.
+* **OBLIGATORIO** construir sistemas 100% dinámicos y parametrizables:
+  - **Configurables por Base de Datos:** Cada inquilino/restaurante define sus propios impuestos, moneda, prefijo de factura, propina sugerida y horarios.
+  - **Variables de Entorno y Config:** Servicios externos (Factus, pasarelas, correos) configurados vía `.env` y consumidos a través de `config('services.factus.url')`.
+  - **Enums Tipados (PHP 8.3 Backed Enums):** Estados de órdenes, tipos de mesa y roles definidos en Enums con valores tipados, nunca strings sueltos repetidos en el código.
+  - **Componentes Dinámicos:** Vistas frontend que renderizan a partir de los datos recibidos de la API/Base de datos, sin estructuras estáticas rígidas.
