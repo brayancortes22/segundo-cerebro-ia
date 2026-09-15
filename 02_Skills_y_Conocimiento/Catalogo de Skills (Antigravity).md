@@ -82,6 +82,8 @@ graph TD
 * **[[Documentacion Universal de Lenguajes]]**: Especificaciones oficiales, estándares modernos y cheat sheets de cualquier lenguaje (Java, Python, TS, PHP, Go, Rust, SQL).
 * **[[Seguridad de Datos, Habeas Data y Privacidad Legal]]**:
   * `data-security-privacy`: Cumplimiento de Habeas Data (Ley 1581 Colombia / SIC), GDPR, consentimiento explícito, encriptación en reposo y tránsito, audit logs y blindaje legal anti-demandas.
+* **[[Diseno Web UI UX Profesional]]**:
+  * `ui-ux-designer`: Diseño de interfaces web y móviles de nivel élite, factor WOW, micro-animaciones, glassmorphism, tipografía fluida y ergonomía POS/KDS.
 * **[[Agy Customizations & Extension]]**:
   * `antigravity-guide`: Manual de comandos de terminal `agy`, atajos de teclado y workflows de IDE.
   * `agy-customizations`: Cómo crear nuevos *Skills*, reglas personalizadas (`GEMINI.md`) o plugins para entrenarme en tus propios proyectos.
