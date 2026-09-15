@@ -1,0 +1,22 @@
+# Obsidian workspace and temporary caches
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Sensitive credentials & secrets
+*.env
+*.pem
+*.key
+*secret*.json
+*.p8
+*.p12
+
+# Node/Python temporary caches (if any)
+node_modules/
+__pycache__/
+*.pyc
