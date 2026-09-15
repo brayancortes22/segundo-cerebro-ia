@@ -46,7 +46,20 @@ gitGraph
 1. 💻 `development`: Rama de trabajo diario donde se desarrollan características y refactorizaciones.
 2. 🔍 `qa`: Rama de aseguramiento de calidad (Staging), donde se ejecutan pruebas automáticas, manuales y de regresión.
 3. 🚀 `production` (o `main`): Rama sagrada de producción. Solo código 100% probado en `qa` que pasa a despliegue final.
-* **Prohibición:** Nunca hacer commits directos a `production` sin pasar previamente por `development` y `qa`.
+* **Prohibición:** Nunca hacer commits directos a `production` senza pasar previamente por `development` y `qa`.
+
+### 4. 🧩 Modularidad Estricta y Prohibición de Archivos Monolíticos (Anti God-Class)
+* **Principio:** Cero archivos kilométricos que concentren múltiples responsabilidades.
+  * **Límite objetivo:** Archivos pequeños, atómicos y altamente legibles (generalmente menos de 150 a 200 líneas).
+  * **En Backend (Laravel):**
+    - Controladores delgados (*Skinny Controllers*) con máximo 3 a 5 líneas por método.
+    - Casos de uso encapsulados en **Action Classes** (ej. `CreateOrderAction`, `EmitFactusInvoiceAction`).
+    - Validaciones obligatoriamente en **Form Requests** dedicados (nunca dentro del controlador).
+    - Transferencia de datos tipada mediante **DTOs**.
+  * **En Frontend (React/Blade):**
+    - Extraer toda la lógica de negocio y llamadas a API en **Custom Hooks**.
+    - Componentes visuales pequeños y desacoplados (*Smart vs Dumb Components*).
+* **Acción obligatoria:** En cuanto un archivo comience a acumular demasiada lógica o líneas, refactorizarlo y separarlo de inmediato.
 
 ---
 

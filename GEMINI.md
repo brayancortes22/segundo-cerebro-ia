@@ -32,3 +32,11 @@
   2. `qa`: Rama de aseguramiento de calidad y pruebas (Staging), donde se valida que no haya errores o regresiones.
   3. `production` (o `main` según convención del repo): Rama de producción oficial y estable, solo para versiones listas y verificadas para despliegue final.
 * **PROHIBIDO** hacer commits directos a `production` sin haber pasado y validado el código previamente en `development` y `qa`.
+
+### 5. Modularidad Estricta y Prohibición de Archivos Monolíticos (Anti God-Class)
+* **PROHIBIDO** crear archivos gigantescos con cientos de líneas que concentren múltiples responsabilidades (God Objects / Monolitos).
+* **OBLIGATORIO** separar el código por funcionalidad, capas y responsabilidades únicas (SRP):
+  - Mantener archivos pequeños, legibles y concisos (idealmente menos de 150 a 200 líneas).
+  - En Backend (Laravel/Node): usar **Action Classes** (un caso de uso por clase), **Service Layer**, **Form Requests** para validación aislada y **DTOs**, evitando controladores sobrecargados (*Skinny Controllers*).
+  - En Frontend (React/Blade): desacoplar lógica en **Custom Hooks** o servicios, y dividir vistas en componentes pequeños reutilizables (*Smart vs Dumb Components*).
+  - Si una clase o componente empieza a crecer o asumir más de una responsabilidad, refactorizarla y dividirla de inmediato.
