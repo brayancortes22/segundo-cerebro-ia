@@ -74,8 +74,30 @@ Ideal para barras de navegación superiores, tarjetas flotantes y modales:
 
 ---
 
-## 📋 4. Protocolo de Revisión Visual
+## 🏛️ 4. Estructura Comercial Obligatoria: Header, Body y Footer Ejecutivo
+1. **Header / Barra de Marca:**
+   - Emblema corporativo con personalidad gráfica.
+   - Navegación clara con indicadores de pulso en vivo para procesos en segundo plano.
+   - Botón visible **"📖 Guía de Uso / Tutorial"**.
+2. **Body / Área de Trabajo Ergonómica:**
+   - Distribución basada en tarjetas (`Surface 1` y `Surface 2`) con padding responsivo.
+3. **Footer Comercial & Sellos Regulatorios:**
+   - Identificación fiscal de la empresa (Razón Social, NIT, dirección y canal de PQRS).
+   - Sellos de confianza: **Habeas Data (Superintendencia de Industria y Comercio - SIC)** y **Estado en vivo de Facturación Electrónica DIAN**.
+   - Atribución de autoría y derechos reservados.
+
+---
+
+## 🎓 5. Onboarding y Tutoriales Integrados (Self-Explaining UI)
+- **Principio Fundamental:** El software debe ser intuitivo y auto-explicativo. Un nuevo mesero, cajero o cocinero debe ser capaz de entender su rol en menos de 2 minutos sin que el dueño tenga que capacitarlo manualmente.
+- **Implementación:** Modal o tour interactivo accesible desde cualquier pantalla clasificado por roles (**Mesero**, **Cocina KDS**, **Caja POS**, **Administrador**), con explicaciones concisas y numeradas paso a paso.
+
+---
+
+## 📋 6. Protocolo de Revisión Visual
 1. ¿El diseño transmite valor comercial y sofisticación desde el primer segundo?
-2. ¿Hay contraste suficiente (accesibilidad WCAG AA/AAA)?
-3. ¿Se adapta con fluidez y elegancia a pantallas de móvil, tablet y monitor de caja?
-4. ¿Los textos de ayuda y estados vacíos (empty states) están diseñados con esmero?
+2. ¿Cuenta con Header de marca, Body ergonómico y Footer ejecutivo con sellos de confianza?
+3. ¿Dispone de una Guía de Uso / Tutorial integrado para nuevos usuarios?
+4. ¿Hay contraste suficiente (accesibilidad WCAG AA/AAA)?
+5. ¿Se adapta con fluidez y elegancia a pantallas de móvil, tablet y monitor de caja?
+6. ¿Los textos de ayuda y estados vacíos (empty states) están diseñados con esmero?
