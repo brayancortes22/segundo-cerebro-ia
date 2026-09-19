@@ -10,6 +10,7 @@ Bienvenido, **Brayan Stid Cortés Lombana** (`bscl`). Esta es tu base de conocim
 
 | Proyecto | Estado | Descripción Principal | Enlace |
 | :--- | :---: | :--- | :---: |
+| **NASA Earth System Trend Detective** | 🟢 En Producción | Plataforma de detección de tendencias biofísicas opuestas (Space Apps 2026, Vercel & Render) | [[NASA Earth System Trend Detective]] |
 | **Netflix TV Bridge** | 🟢 Activo | Control nativo con D-Pad para Netflix móvil en TV Box Android sin ratón | [[Netflix TV Bridge]] |
 | **Accesorios Lilis** | 🟢 En desarrollo | Plataforma web / E-commerce con backend, frontend y arquitectura escalable | [[Accesorios Lilis]] |
 | **TikTok Live Recorder** | 🟡 Estable | Automatización con Python para detección y descarga de directos de TikTok | [[TikTok Live Recorder]] |
