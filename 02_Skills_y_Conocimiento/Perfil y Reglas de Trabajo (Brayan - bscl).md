@@ -68,6 +68,23 @@ gitGraph
   * **Config & Environment:** Todo parámetro de conexión, URLs de endpoints de la DIAN/Factus o credenciales se maneja exclusivamente a través de `config()` y `.env`.
   * **Vistas Dinámicas:** Componentes frontend que se construyen dinámicamente según la respuesta del servidor sin tablas fijas ni opciones cableadas.
 
+### 6. 🔄 Respaldo y Fallback con MCP Smart Router
+* **Principio:** Si ocurre saturación, agotamiento de cuota o límites de tokens en los modelos principales de Google (Gemini):
+  - **Uso de Respaldo:** Recurrir de inmediato a la herramienta MCP local (`consult_free_ai` conectada a `smart-ai-router`).
+  - **Modelos Gratuitos:** Utilizar Groq Qwen 3.8 27B / GPT-OSS 120B o OpenRouter Nemotron 3.5 / Cohere Code para continuar generando código y resolviendo dudas técnicas sin interrumpir la sesión.
+
+### 7. 🛡️ Blindaje Integral Anti-Bots y Protección de Recursos (Honeypot, Rate Limiting y WAF)
+* **Principio:** Prohibido dejar endpoints de mutación (`POST`, `PUT`, `PATCH`, `DELETE`) o formularios expuestos sin defensas activas contra scripts y scrapers.
+  * **Trampas Honeypot Invisibles:** Campos trampa camuflados fuera del viewport (`opacity: 0; position: absolute; left: -9999px;`). Si el backend recibe datos en este campo, abortar de inmediato con `400 Bad Request` antes de ejecutar lógica o descontar stock e inventario.
+  * **Rate Limiting Contextualizado:**
+    - Límite global para navegación general.
+    - Límite estricto en autenticación (anti-fuerza bruta).
+    - Límite restrictivo en pedidos/reservas/checkout para prevenir agotamiento de inventario (*Denial of Inventory*).
+  * **Filtrado Perimetral de Cabeceras (BotDetectionMiddleware):** Exigir `User-Agent` obligatorio en operaciones de mutación y bloquear firmas de escáneres maliciosos (`sqlmap`, `nikto`, `masscan`, etc.) con `403 Forbidden`.
+  * **Filtro de Correos Temporales / Basura:** Bloquear dominios de correo desechables en registros.
+  * **Soporte Cloudflare Turnstile / reCAPTCHA v3:** Validación en backend y frontend para desafío sin fricción a humanos.
+* **Nota completa de arquitectura:** [[Blindaje Anti-Bots y Proteccion de Recursos]]
+
 ---
 
 ## 🎯 Proyectos Bajo Dirección de Brayan (`bscl`)

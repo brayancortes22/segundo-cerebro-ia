@@ -41,6 +41,7 @@ Bienvenido, **Brayan Stid Cortés Lombana** (`bscl`). Esta es tu base de conocim
   * 👥 [[Sistemas Multiagente (Arquitectura, Orquestacion y Patrones)]]: Orquestación, patrón Supervisor/Worker, Actor-Critic, LangGraph y CrewAI.
   * 🎨 [[Diseno Web UI UX Profesional]]: Estándar de diseño élite, factor WOW, glassmorphism, micro-animaciones y ergonomía en POS/KDS.
   * 🛡️ [[Seguridad de Datos, Habeas Data y Privacidad Legal]]: Marco normativo Ley 1581 (Habeas Data Colombia / SIC), GDPR, cifrado y blindaje legal anti-demandas.
+  * 🪤 [[Blindaje Anti-Bots y Proteccion de Recursos]]: Defensa multicapa, trampas Honeypot, Rate Limiting contextual (anti-agotamiento de stock) y WAF perimetral.
   * 📚 [[Documentacion Universal de Lenguajes]]: Referencia rápida y APIs oficiales de cualquier lenguaje.
 * 🤖 **[[Colaboracion con IA (Antigravity)]]**: Guía de cómo trabajar juntos con máxima eficiencia.
   * ⚡ [[Multiagentes en Antigravity IDE (Flujo de Trabajo Exponencial)]]: Despliegue de agentes paralelos, subagentes autónomos y testing con browser.

@@ -52,3 +52,23 @@
   - **Variables de Entorno y Config:** Servicios externos (Factus, pasarelas, correos) configurados vía `.env` y consumidos a través de `config('services.factus.url')`.
   - **Enums Tipados (PHP 8.3 Backed Enums):** Estados de órdenes, tipos de mesa y roles definidos en Enums con valores tipados, nunca strings sueltos repetidos en el código.
   - **Componentes Dinámicos:** Vistas frontend que renderizan a partir de los datos recibidos de la API/Base de datos, sin estructuras estáticas rígidas.
+
+### 7. Respaldo y Fallback con MCP Smart Router
+* En caso de saturación, agotamiento de cuota o límites de tokens en los modelos principales de Google (Gemini):
+  - **OBLIGATORIO** recurrir como mecanismo de respaldo a la herramienta MCP local (`consult_free_ai` conectada a `smart-ai-router`).
+  - Utilizar los modelos gratuitos de alto rendimiento (Groq Qwen 3.8 27B / GPT-OSS 120B y OpenRouter Nemotron 3.5 / Cohere Code) para continuar generando código, resolviendo dudas técnicas o analizando alternativas sin interrumpir la sesión de trabajo.
+
+### 8. Blindaje Integral Anti-Bots y Protección de Recursos (Honeypot, Rate Limiting y WAF)
+* **PROHIBIDO** dejar endpoints de mutación (`POST`, `PUT`, `PATCH`, `DELETE`) o formularios expuestos sin mitigación activa contra bots, scrapers maliciosos y scripts automáticos:
+  - Dejar endpoints de creación de órdenes, pagos, reservas o autenticación sin control estricto de frecuencia (*Rate Limiting*).
+  - Dejar formularios públicos de checkout, registro o contacto sin trampas invisibles (*Honeypot*) o validación de desafío (Cloudflare Turnstile / reCAPTCHA).
+  - Permitir peticiones automáticas de mutación sin cabecera `User-Agent` legítima o provenientes de herramientas conocidas de escaneo y explotación (`sqlmap`, `nikto`, `masscan`, `wpscan`, etc.).
+* **OBLIGATORIO** implementar defensas multicapa en todo flujo crítico de negocio:
+  - **Trampas Honeypot invisibles:** Inputs camuflados fuera del viewport (`position: absolute; left: -9999px; opacity: 0; pointer-events: none;`) en formularios sensibles. Si el backend recibe cualquier valor en este campo, abortar de inmediato con `400 Bad Request` antes de ejecutar transacciones o descontar stock e inventario.
+  - **Rate Limiting por IP específico por contexto:**
+    - Límite global moderado para navegación general.
+    - Límite estricto en autenticación (anti-fuerza bruta).
+    - Límite restrictivo en pedidos/checkout/reservas (prevención de agotamiento de inventario o *Denial of Inventory*).
+  - **Filtrado perimetral de cabeceras (Middleware de Detección de Bots):** Exigir `User-Agent` obligatorio en operaciones de mutación y bloquear firmas de escáneres maliciosos con `403 Forbidden`.
+  - **Filtro de correos temporales/desechables:** Bloquear dominios de correo temporal o basura en formularios de registro.
+  - **Soporte para Cloudflare Turnstile / reCAPTCHA v3:** Diseñar interfaces y verificación en backend mediante variables de entorno configurables para activación sin fricción para usuarios reales.
