@@ -3,6 +3,8 @@
 - **Tipo:** Aplicación Android Nativa (Accessibility Service)
 - **Estado:** 🟢 Activo
 - **Ubicación en disco:** `c:\Users\NITRO ACER\Desktop\proyectos con ia\app de netflix modo tv\`
+- **Repositorio GitHub:** [github.com/brayancortes22/netflix-tv-bridge](https://github.com/brayancortes22/netflix-tv-bridge)
+- **Ramas:** `development`, `qa`, `main` (Estrategia de 3 ramas)
 - **Relacionado:** [[Android Accessibility Service]], [[00_Centro_de_Mando]]
 
 ---

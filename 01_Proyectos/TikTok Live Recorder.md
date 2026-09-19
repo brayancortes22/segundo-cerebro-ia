@@ -3,6 +3,8 @@
 - **Tipo:** Herramienta de Automatización en Python
 - **Estado:** 🟡 Estable
 - **Ubicación en disco:** `c:\Users\NITRO ACER\Desktop\proyectos con ia\clisp tiktok live\`
+- **Repositorio GitHub:** [github.com/brayancortes22/tiktok-live-recorder](https://github.com/brayancortes22/tiktok-live-recorder)
+- **Ramas:** `development`, `qa`, `main` (Estrategia de 3 ramas)
 - **Relacionado:** [[00_Centro_de_Mando]]
 
 ---
