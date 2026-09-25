@@ -23,6 +23,8 @@ graph TD
     AI --> Neural["[[Redes Neuronales y Deep Learning]]"]
     AI --> MultiAgent["[[Sistemas Multiagente (Arquitectura, Orquestacion y Patrones)]]"]
     Web --> WebExt["[[Modern Web & Chrome Extensions]]"]
+    Web --> DesignEng["[[Frontend_Design_Engineering_UI_Skills]]"]
+    Web --> UIUX["[[Diseno_Web_UI_UX_Profesional]]"]
     Cloud --> FireEco["[[Firebase Suite]]"]
     Eng --> CleanCode["[[Clean Code y SOLID]]"]
     Eng --> Patterns["[[Patrones de Diseno (GoF)]]"]
@@ -52,7 +54,11 @@ graph TD
 * **[[Redes Neuronales y Deep Learning]]**: Fundamentos matemáticos, Perceptrón, Backpropagation, Redes Convolucionales (CNN) y Arquitectura de Transformers.
 * **[[Sistemas Multiagente (Arquitectura, Orquestacion y Patrones)]]**: Orquestación jerárquica (Supervisor/Workers), bucle Actor-Critic, LangGraph, CrewAI y buenas prácticas de prevención de bucles.
 
-### 3. 🌐 Frontend Moderno y Extensiones
+### 3. 🌐 Frontend Moderno, Design Engineering & Extensiones
+* **[[Frontend_Design_Engineering_UI_Skills]]** ⭐:
+  * `design-engineering`: Estándares de clase mundial de **UI Skills** (Julien Thibeaut / Addy Osmani / Emil Kowalski). Domina Baseline UI, micro-espaciado, animación 60 FPS acelerada por GPU, Core Web Vitals, accesibilidad WCAG 2.2 AA, CSS moderno (Container Queries, `:has`, `oklch`) y auditoría con React Doctor.
+* **[[Diseno_Web_UI_UX_Profesional]]**:
+  * `ui-ux-designer`: Experiencia WOW, paletas armónicas, modo oscuro premium, tipografía tabular y glassmorphism.
 * **[[Modern Web & Chrome Extensions]]**:
   * `modern-web-guidance`: Estándares modernos de CSS/HTML/JS, animaciones dirigidas por scroll, glassmorphism, selector `:has()` y Web APIs avanzadas.
   * `chrome-extensions`: Creación y publicación de extensiones para Google Chrome con Manifest V3.
