@@ -11,7 +11,7 @@
   - 📱 **Frontend Móvil:** [July173/FrontMovilAutogestion](https://github.com/July173/FrontMovilAutogestion) (.NET MAUI C# Multiplataforma)
 - **Ramas del Proyecto:** `dev` (Desarrollo), `qa` (Staging/Validación), `main` (Producción)
 - **Stack Tecnológico:** Python 3.12, Django 5.x, Django REST Framework, SimpleJWT, MySQL 8, Docker, React 19, Vite, TailwindCSS, .NET MAUI C# 12, Render Cloud, Vercel Edge
-- **Relacionado:** [[00_Centro_de_Mando]], [[Clean Code y SOLID]], [[Arquitectura Limpia y Patrones de Arquitectura]], [[Blindaje Anti-Bots y Proteccion de Recursos]], [[DevOps y CI-CD (GitHub Actions, Azure, Jenkins y Despliegues)]], [[Diseno Responsivo y Adaptabilidad (Web, Mobile y TV)]]
+- **Relacionado:** [[00_Centro_de_Mando]], [[Autogestion SENA - Arquitectura Frontend y Hooks]], [[Clean Code y SOLID]], [[Arquitectura Limpia y Patrones de Arquitectura]], [[Blindaje Anti-Bots y Proteccion de Recursos]], [[DevOps y CI-CD (GitHub Actions, Azure, Jenkins y Despliegues)]], [[Diseno Responsivo y Adaptabilidad (Web, Mobile y TV)]]
 
 ---
 
