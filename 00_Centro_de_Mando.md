@@ -11,8 +11,10 @@ Bienvenido, **Brayan Stid Cortés Lombana** (`bscl`). Esta es tu base de conocim
 | Proyecto | Estado | Descripción Principal | Enlace |
 | :--- | :---: | :--- | :---: |
 | **NASA Earth System Trend Detective** | 🟢 En Producción | Plataforma de detección de tendencias biofísicas opuestas (Space Apps 2026, Vercel & Render) | [[NASA Earth System Trend Detective]] |
+| **Autogestión SENA** | 🟢 En Preparación | Plataforma integral web/móvil para gestión académica, novedades, 2FA y carga masiva Sofia Plus | [[Autogestion SENA]] |
 | **ClickUp Task Automator** | 🟢 Activo | Conector TypeScript CLI para sincronización de los 4 Sprints con ClickUp API v2 | [[ClickUp Task Automator]] |
 | **Netflix TV Bridge** | 🟢 Activo | Control nativo con D-Pad para Netflix móvil en TV Box Android sin ratón | [[Netflix TV Bridge]] |
+| **Traductor de Juegos** | 🟢 En desarrollo | Traductor flotante con OCR y ML Kit offline para juegos Android (LifeAfter) | [[Traductor de Juegos]] |
 | **Accesorios Lilis** | 🟢 En desarrollo | Plataforma web / E-commerce con backend, frontend y arquitectura escalable | [[Accesorios Lilis]] |
 | **TikTok Live Recorder** | 🟡 Estable | Automatización con Python para detección y descarga de directos de TikTok | [[TikTok Live Recorder]] |
 | **Portafolio Personal** | 🟡 Mantenimiento | Repositorio y showcase de trabajos y habilidades | [[Portafolio Personal]] |
