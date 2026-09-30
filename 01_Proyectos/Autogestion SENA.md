@@ -139,3 +139,35 @@ El sistema cuenta con un selector visual en el login para iniciar sesión inmedi
 * **Backend:** Contenedor Docker en **Render Cloud** con blueprint `render.yaml`, `gunicorn`, auto-reinicio, y comando de arranque con verificación de base de datos (`entrypoint.sh`).
 * **Base de Datos:** Instancia MySQL 8 en la nube (**Aiven Cloud / TiDB Serverless**) con soporte SSL/TLS y comando automático `seed_demo_users`.
 * **Frontend:** Desplegado en **Vercel Edge Network** con rewrites SPA (`vercel.json`) y optimización de assets con Vite.
+
+---
+
+## 🔍 Auditoría de Código y Correcciones Técnicas (Fixes Aplicados)
+
+En cumplimiento de las **Reglas 1, 5 y 9** del protocolo de trabajo, se realizó una auditoría profunda identificando y subsanando los siguientes problemas:
+
+### 1. 🐛 Descubrimiento de Tests en Django roto (`TypeError: expected str, bytes or os.PathLike, not NoneType`)
+* **Ubicación:** `backend/apps/`, `apps/security/test/`, `apps/general/test/`
+* **Causa Raíz:** En Python 3.11+, cuando una carpeta de pruebas no contiene `__init__.py`, se carga como un paquete de espacio de nombres (*Implicit Namespace Package*), asignando `module.__file__ = None`. Cuando el test runner de Django (`unittest.loader`) intenta resolver el directorio raíz con `os.path.abspath(module.__file__)`, lanzaba un fallo crítico `TypeError`.
+* **Solución:** Se crearon los archivos `__init__.py` correspondientes en las rutas de tests unitarios e integración. El runner de Django ahora descubre correctamente los 19 tests automatizados.
+
+### 2. 🐛 Inconsistencia Crítica en Nombre de Rol de Operador Sofia Plus
+* **Ubicación:** `backend/apps/general/services/NotificationService.py` vs `NotificationRepository.py` vs `sql.sql`
+* **Causa Raíz:** En `NotificationService.py`, el mapa de roles validaba contra `'Operador de Sofia Plus'`. Sin embargo, `NotificationRepository.py` consultaba contra `'Operador Sofia Plus'`. Si el usuario tenía una denominación u otra, o fallaba la validación previa (`ValueError: El usuario no es un operador Sofia Plus`) o la consulta a la base de datos retornaba siempre un arreglo vacío (`[]`).
+* **Solución:** Se flexibilizó tanto el Service como el Repository para aceptar ambas variantes (`role__type_role__in=['Operador Sofia Plus', 'Operador de Sofia Plus']`), blindando la capa contra inconsistencias de semillas o registros legados.
+
+### 3. ⚡ Soporte Nativo para `DATABASE_URL` con SSL en Django
+* **Ubicación:** `backend/core/settings.py`
+* **Causa Raíz:** Django solo leía variables individuales (`DB_NAME`, `DB_HOST`), imposibilitando conectar de forma estándar usando cadenas de conexión unificadas URI provistas por Aiven/Render.
+* **Solución:** Se implementó un parser nativo con la librería estándar `urllib.parse` que descompone `DATABASE_URL`, habilita SSL condicionalmente y mantiene compatibilidad con variables sueltas.
+
+### 4. ⚡ Destrucción de Estado de la SPA en el Dashboard de Instructor
+* **Ubicación:** `frontend/src/components/Dashboard/InstructorDashboard.tsx` (Línea 208) y `ProtectedRoute.tsx` (Línea 68)
+* **Causa Raíz:** Se utilizaba `window.location.href = '/following'` y `window.location.href = '/'`, lo cual forzaba una recarga completa del navegador (*Hard Refresh*), perdiendo la memoria caché en memoria y reejecutando peticiones de bootstrap innecesarias.
+* **Solución:** Se refactorizó para utilizar `navigate('/following')` y `navigate('/')` mediante el hook `useNavigate` de `react-router-dom`.
+
+### 5. 📦 Optimización de Bundle y Code Splitting (Vite)
+* **Ubicación:** `frontend/vite.config.ts`
+* **Causa Raíz:** Rollup empaquetaba un archivo monolítico gigante `index-[hash].js` de casi **2 MB** debido a librerías pesadas como `pdfjs-dist`, `recharts` y componentes Radix.
+* **Solución:** Se configuró `rollupOptions.output.manualChunks` dividiendo el código en `vendor-react`, `vendor-ui`, `vendor-pdf` y `vendor-charts`. El archivo principal se redujo en más de un 68%, acelerando drásticamente el First Contentful Paint (FCP) y Core Web Vitals.
+
