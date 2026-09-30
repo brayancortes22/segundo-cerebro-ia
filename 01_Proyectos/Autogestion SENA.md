@@ -171,3 +171,9 @@ En cumplimiento de las **Reglas 1, 5 y 9** del protocolo de trabajo, se realizó
 * **Causa Raíz:** Rollup empaquetaba un archivo monolítico gigante `index-[hash].js` de casi **2 MB** debido a librerías pesadas como `pdfjs-dist`, `recharts` y componentes Radix.
 * **Solución:** Se configuró `rollupOptions.output.manualChunks` dividiendo el código en `vendor-react`, `vendor-ui`, `vendor-pdf` y `vendor-charts`. El archivo principal se redujo en más de un 68%, acelerando drásticamente el First Contentful Paint (FCP) y Core Web Vitals.
 
+### 6. 🐛 Error TS2688 en Language Server de TypeScript (`aria-query` e `include` huérfano)
+* **Ubicación:** `frontend/tsconfig.app.json`
+* **Causa Raíz:** `tsconfig.app.json` carecía de las propiedades explícitas `types` y `typeRoots`, lo que causaba que el compilador TypeScript escaneara automáticamente todo el directorio `@types/` e intentara registrar a `aria-query` como una biblioteca de tipos global implícita en vez de resolverla como dependencia modular de `@testing-library/dom`. Adicionalmente, el arreglo `include` contenía una ruta inexistente fuera del repositorio (`../Front-end-Proyecto-2025/src/lib`), descalibrando la raíz del proyecto para el Language Server del IDE.
+* **Solución:** Se restringió `include: ["src"]`, se delimitó `typeRoots: ["./node_modules/@types"]` y se declararon los tipos globales necesarios (`node`, `jest`, `@testing-library/jest-dom`).
+
+
