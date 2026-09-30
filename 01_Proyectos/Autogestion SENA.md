@@ -70,6 +70,95 @@ graph TD
 
 ---
 
+## 🏛️ Desglose Arquitectónico Profundo y Patrones de Software
+
+### 1. 🧩 Patrón Arquitectónico en Capas del Backend (Clean Architecture / Simplified DDD)
+A diferencia de los proyectos Django monolíticos tradicionales donde los controladores (`views.py`) concentran consultas SQL, serialización y reglas de negocio (*God Controllers*), en **Autogestión SENA** se implementó una **arquitectura desacoplada en 4 capas estrictas**:
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Cliente as 🌐 Frontend Web / Móvil
+    participant View as 🖥️ ViewSet (DRF Layer)
+    participant Service as ⚙️ Service Layer (Business Logic)
+    participant Repo as 🗄️ Repository Layer (Data Access)
+    participant Model as 📦 Entity / Model (ORM)
+    participant DB as 🐬 MySQL 8 Cloud Database
+
+    Cliente->>View: HTTP Request (JSON Payload + JWT)
+    Note over View: Validación de Serializer & Permisos RBAC
+    View->>Service: Invoca Método del Caso de Uso (DTO / Parámetros)
+    Note over Service: Reglas de Negocio, Validaciones y Transacciones
+    Service->>Repo: Llama método de persistencia tipado
+    Repo->>Model: QuerySet filter / create / update
+    Model->>DB: SQL Query (Prepared Statement)
+    DB-->>Model: Raw Data Rows
+    Model-->>Repo: Instancias de Entidad
+    Repo-->>Service: Entidad / Colección de Entidades
+    Note over Service: Procesamiento / Disparo de Notificaciones o Tareas
+    Service-->>View: Resultado de Negocio Procesado
+    View-->>Cliente: HTTP Response (JSON Serializado + Status Code)
+```
+
+#### Responsabilidad de cada Capa:
+1. **`entity/models/` (Capa de Dominio y Persistencia ORM):**
+   - Define el esquema relacional, tipos de campo, índices y claves foráneas.
+   - Cero lógica de negocio; encapsula únicamente el estado y las relaciones de la entidad.
+2. **`repositories/` (Capa de Persistencia / Repository Pattern):**
+   - Aísla por completo las consultas a la base de datos (QuerySets, filtros complejos, ordenamientos).
+   - Métodos explícitos y reutilizables (`get_by_id`, `list_all`, `get_by_sofia_operator_id`, etc.).
+   - Permite modificar o indexar consultas sin tocar la lógica de negocio ni los endpoints de la API.
+3. **`services/` (Capa de Lógica de Negocio / Service Layer):**
+   - Orquesta los casos de uso del sistema bajo el principio de responsabilidad única (SRP).
+   - Aplica validaciones semánticas y políticas del SENA (ej. límites de aprendices asignables a un instructor, periodos máximos de contrato de 7 meses, reglas de pre-aprobación y estados de solicitud).
+   - Controla transacciones atómicas (`transaction.atomic`) y disparos de tareas asíncronas.
+4. **`views/` (Capa de Entrega / Delivery Mechanism):**
+   - ViewSets de Django REST Framework delgados (*Skinny ViewSets*).
+   - Únicamente parsean la petición HTTP, validan parámetros con Serializers, documentan esquemas en Swagger/OpenAPI y retornan la respuesta HTTP estandarizada.
+
+---
+
+### 2. ⚡ Patrón de Tareas en Segundo Plano y Automatización (Worker / Event-Driven con Celery & Beat)
+- **Celery Worker:** Desacopla tareas que consumen tiempo o I/O intensivo (como el envío de correos 2FA y la sincronización documental) fuera del ciclo petición/respuesta HTTP.
+- **Celery Beat (Planificador Cron):** Ejecuta tareas recurrentes programadas a nivel de servidor:
+  - `deactivate-expired-instructors-daily`: Se ejecuta a las `00:01 AM` evaluando la vigencia de contratos y desactivando instructores vencidos automáticamente sin intervención humana.
+
+---
+
+### 3. 📢 Patrón de Comunicación en Tiempo Real (Pub-Sub / WebSockets con Daphne ASGI)
+- Arquitectura asíncrona sobre **Django Channels** y servidor **Daphne**.
+- Canal bidireccional para emitir notificaciones push en tiempo real a los navegadores de aprendices, instructores y coordinadores cuando se produce un cambio de estado en una solicitud o se agenda una visita.
+
+---
+
+### 4. 💻 Patrón Arquitectónico del Frontend (React + TypeScript)
+El frontend web se diseñó con una estructura modular por capas altamente escalable:
+
+```
+src/
+├── Api/               # Fachada de conexión con Backend (Gateway Pattern)
+│   ├── config/        # Single Source of Truth para Endpoints (ConfigApi.ts)
+│   ├── Services/      # Funciones tipadas para consumo de API
+│   └── types/         # Definiciones TypeScript de entidades y DTOs
+├── components/        # Componentes UI reutilizables (Presentational / Dumb)
+├── hook/              # Custom Hooks con la lógica de estado y casos de uso (Smart)
+├── pages/             # Vistas principales y composición de páginas
+└── utils/             # Funciones de formateo, validaciones y parsing de errores
+```
+
+#### Patrones Clave del Frontend:
+- **Smart vs. Dumb Components (Container / Presentational):** Los componentes visuales reciben props y emiten eventos, mientras que los *Custom Hooks* (`useRoles`, `useForms`, `useInstructorAssignments`, `useAssignReviewModal`, etc.) centralizan las llamadas a API, estado y efectos secundarios.
+- **Session Watchdog Pattern (`useIdleTimer`):** Monitor de inactividad que detecta interacción del usuario (teclado/ratón); si se supera el umbral de inactividad, despliega un modal de expiración de sesión y purga de forma segura los tokens JWT del almacenamiento local.
+- **Bundle Splitting Inteligente (Vite Rollup):** Fragmentación dinámica del código compilado en chunks (`vendor-react`, `vendor-ui`, `vendor-pdf`, `vendor-charts`), garantizando que la carga inicial de la aplicación sea liviana y rápida.
+
+---
+
+### 5. 📱 Arquitectura de la Aplicación Móvil (.NET MAUI C#)
+- **Abstracción Multiplataforma Nativa:** Código C# unificado que compila nativamente para Android, iOS, Windows y macOS.
+- **Capa de Endpoints Centralizada (`Endpoints.cs`):** Arquitectura desacoplada para la resolución dinámica de rutas y consumo seguro HTTPS hacia la API en la nube.
+
+---
+
 ## 👥 Módulos Principales y Capacidades
 
 ### 1. 🔐 Seguridad, Roles y Autenticación de Dos Factores (2FA)
