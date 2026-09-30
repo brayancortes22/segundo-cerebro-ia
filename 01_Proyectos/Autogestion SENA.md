@@ -1,7 +1,9 @@
 # 🏛️ Autogestión SENA — Sistema Integral de Novedades y Gestión Académica
 
 - **Tipo:** Plataforma Web & Móvil Institucional (Fullstack Empresarial)
-- **Estado:** 🟢 En Preparación para Producción (Render Container + Vercel Edge + Cloud MySQL)
+- **Estado:** 🟢 En Producción (Vercel Edge + Render Container + Aiven Cloud MySQL 8.4)
+- **Frontend Oficial:** [autogestion-sena.vercel.app](https://autogestion-sena.vercel.app)
+- **Backend API & Swagger:** [autogestion-sena-api.onrender.com/swagger/](https://autogestion-sena-api.onrender.com/swagger/)
 - **Ubicación en disco:** `c:\Users\NITRO ACER\Desktop\proyectos con ia\autogestion-sena\`
 - **Repositorios GitHub:**
   - 🚀 **Backend Web API:** [July173/Back-end-web-API-autogestionSena](https://github.com/July173/Back-end-web-API-autogestionSena) (Django REST Framework, MySQL, JWT, 2FA)
