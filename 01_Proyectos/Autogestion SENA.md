@@ -147,6 +147,12 @@ src/
 ```
 
 #### Patrones Clave del Frontend:
+- **API Registry & Endpoint Facade Pattern (`ConfigApi.ts`):** 
+  - Centraliza **el 100% de las URLs y rutas del backend** en un único archivo de configuración (`src/Api/config/ConfigApi.ts`).
+  - **Cero Código Quemado (Regla 6):** Ningún componente ni servicio escribe strings de URL absolutas. Si un endpoint del backend cambia de nombre o ruta, solo se modifica una línea en `ConfigApi.ts` y el cambio se propaga a todo el sistema.
+  - **Namespacing por Dominio de Negocio:** Rutas organizadas jerárquicamente por entidad (`ENDPOINTS.user`, `ENDPOINTS.requestAsignation`, `ENDPOINTS.instructor`, `ENDPOINTS.rol`, `ENDPOINTS.notification`, etc.).
+  - **Resolución Inteligente de Entornos:** Conmutación automática y transparente entre variables de entorno (`VITE_API_BASE_URL`), entorno local (`localhost:8000`) y producción en la nube Render con HTTPS (`https://autogestion-sena-api.onrender.com/api/`).
+  - **Arquitectura Espejo con Móvil:** Este mismo patrón fue replicado de forma idéntica en el cliente móvil .NET MAUI con `Const/Endpoints.cs`, garantizando que ambos clientes compartan la misma taxonomía y convenciones de consumo.
 - **Smart vs. Dumb Components (Container / Presentational):** Los componentes visuales reciben props y emiten eventos, mientras que los *Custom Hooks* (`useRoles`, `useForms`, `useInstructorAssignments`, `useAssignReviewModal`, etc.) centralizan las llamadas a API, estado y efectos secundarios.
 - **Session Watchdog Pattern (`useIdleTimer`):** Monitor de inactividad que detecta interacción del usuario (teclado/ratón); si se supera el umbral de inactividad, despliega un modal de expiración de sesión y purga de forma segura los tokens JWT del almacenamiento local.
 - **Bundle Splitting Inteligente (Vite Rollup):** Fragmentación dinámica del código compilado en chunks (`vendor-react`, `vendor-ui`, `vendor-pdf`, `vendor-charts`), garantizando que la carga inicial de la aplicación sea liviana y rápida.
