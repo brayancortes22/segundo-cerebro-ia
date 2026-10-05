@@ -1,7 +1,7 @@
 # 🌌 Aurora Engine — Plataforma de Desarrollo y Creación con IA
 
 > **Estado:** 🟡 En Desarrollo Activo (Milestone 0 — Fork Foundation)  
-> **Fundación:** Godot 4.3+ (Fork Profundo con Módulos C++)  
+> **Fundación:** **Godot 4.7.2-stable** (Oficialmente adoptado en ADR-0001, SHA: `ed1daf0bf001b61586d9930840f2f1394092c079`)  
 > **Organización Oficial:** [aurora-engine-labs](https://github.com/aurora-engine-labs)  
 > **Repositorio Oficial:** [aurora-engine](https://github.com/aurora-engine-labs/aurora-engine)  
 > **Equipo Fundador:** Brayan Stid Cortés Lombana (`bscl` / @brayancortes22) & Diego Arias (@DiegoArias32)  
@@ -12,7 +12,7 @@
 ## 🧭 Visión y Filosofía de Desarrollo
 
 Aurora Engine nace como una plataforma de desarrollo de videojuegos (2D y 3D), cinematografía, animación y entornos interactivos que fusiona:
-1. **Un motor gráfico y editor maduro** basado en el chasis de código abierto de **Godot Engine**.
+1. **Un motor gráfico y editor maduro** basado en el chasis de código abierto de **Godot Engine 4.7.2-stable** (la versión más moderna y estable a octubre de 2026, con 57 correcciones y sin incompatibilidades).
 2. **Capa Nativa de Agentes Inteligentes (Aurora Intelligence):** Conexión con Claude Code, Codex, Gemini y modelos locales mediante CLI/Login oficial primero y APIs REST secundarias.
 3. **Control Estructurado vía MCP (Model Context Protocol):** La IA no manipula código arbitrario ni memoria sin control; interactúa mediante un registro formal de herramientas (*Tool Registry*), validación estricta de esquemas, permisos por capas y un sistema de transacciones reversibles (**Undo AI Changes**).
 4. **Pipeline Desacoplado de Producción:** Integración nativa con **Blender** (vía Blender Production MCP) para retopología, LODs, UVs y rigging automático, y con **Substance Painter** para texturizado PBR inteligente.
@@ -27,12 +27,34 @@ Aurora Engine nace como una plataforma de desarrollo de videojuegos (2D y 3D), c
             ▼                            ▼                            ▼
   ┌───────────────────┐        ┌───────────────────┐        ┌───────────────────┐
   │   AURORA ENGINE   │        │      BLENDER      │        │ SUBSTANCE PAINTER │
-  │  (Godot Deep Fork)│        │ (Production MCP)  │        │   (Substance MCP) │
+  │ (Godot 4.7.2 Fork)│        │ (Production MCP)  │        │   (Substance MCP) │
   │ • Runtime & Nodes │        │ • Retopology/LODs │        │ • PBR Texturing   │
   │ • Clustered / RT  │        │ • Rigging & Anim  │        │ • Smart Materials │
   │ • Cinematics/Seq  │        │ • Mesh Processing │        │ • Mask Baking     │
   └───────────────────┘        └───────────────────┘        └───────────────────┘
 ```
+
+---
+
+## 📚 Índice de Documentación Oficial en el Repositorio (`docs/`)
+
+El repositorio cuenta con 13 especificaciones técnicas exhaustivas redactadas por el equipo:
+* **`docs/MASTER_CONTEXT.md`:** Las 133 secciones fundacionales originales.
+* **`docs/00-vision-y-principios.md`:** Filosofía, alcance y límites.
+* **`docs/01-arquitectura.md`:** Diagrama de capas y flujo de ejecución de IA.
+* **`docs/02-estructura-del-repositorio.md`:** Estructura de carpetas (`modules/aurora_*`).
+* **`docs/03-upstream-ramas-y-versiones.md`:** Convivencia con Godot, importación con historial completo y tags.
+* **`docs/04-compilacion-y-entorno.md`:** Requisitos en Windows/Linux, SCons $\ge$ 4.10.1 (requerido para VS 2026), Direct3D 12 y variable `DISABLE_GODOT_CI=true` (activa).
+* **`docs/05-aurora-intelligence.md`:** Proveedores, autenticación local y orquestador.
+* **`docs/06-aurora-mcp-y-tool-registry.md`:** Protocolo MCP, transacciones y esquemas JSON.
+* **`docs/07-pipeline-externo.md`:** Blender Production MCP y procedencia de assets.
+* **`docs/08-sistemas-del-motor.md`:** Shaders, volumetría, cinemáticas y animación.
+* **`docs/09-roadmap.md`:** Hitos M0 a M20 con criterios de aceptación demostrables.
+* **`docs/10-estandares.md`:** Convenciones de C++, naming (`p_param`, snake_case, `Ref<>`), logging y Definition of Done.
+* **`docs/11-seguridad-y-privacidad.md`:** Gestión de credenciales y sandbox.
+* **`docs/12-riesgos.md`:** Matriz de riesgos y mitigaciones.
+* **`docs/adr/`:** Decisiones de Arquitectura (ADR-0001: Godot 4.7.2, ADR-0002: Fork con historial, ADR-0003: Autenticación).
+* **`docs/lessons_learned/Errores_del_proceso.md`:** Los 100 errores reales y guardrails.
 
 ---
 
@@ -45,7 +67,7 @@ Para detalles técnicos completos de los errores cometidos en NOVA Engine y las 
 
 | Dimensión | NOVA Engine (Lección / Error) | AURORA ENGINE (Estrategia Definitiva) |
 | :--- | :--- | :--- |
-| **Punto de Partida** | Cero absoluto (GLFW, GLAD, Win32, CMake) | **Godot 4.3 Foundation** (Chasis maduro y probado) |
+| **Punto de Partida** | Cero absoluto (GLFW, GLAD, Win32, CMake) | **Godot 4.7.2 Foundation** (Chasis maduro y probado) |
 | **Tiempo al Primer Frame** | Semanas en `Logger.h` y CMake sin ver nada | **Día 1:** Viewport 3D, Forward+ e iluminación activa |
 | **Integración con IA** | Chat externo manual sin conexión al motor | **Aurora MCP nativo** con Tool Registry y Undo |
 | **Hardware Objetivo** | Incierto / Vulnerable a cuellos de botella | Optimizado para **PCs básicas con RTX de entrada** |
