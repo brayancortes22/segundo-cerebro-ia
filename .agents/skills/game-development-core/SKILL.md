@@ -1,11 +1,13 @@
 ---
 name: game-development-core
-description: Plan and implement engine-agnostic video game features, prototypes, architecture, content workflows, and releases. Use when starting a game, scoping a vertical slice, choosing a system boundary, or coordinating gameplay, art, audio, and platform work.
+description: Plan and implement engine-agnostic video game features, playable prototypes, architecture, content workflows, and releases. Use for a game project, player-facing feature, game brief, or vertical slice; use godot-engine-fork-development for Godot engine source and fork work.
 metadata:
   version: "1.0.0"
   reviewed: "2026-10-04"
 ---
 # Game development core
+
+This skill is for the game being played and the experience delivered to its player. A game engine, editor, MCP server, or asset tool is a separate product with its own roadmap; do not treat work on those systems as progress on the game's playable loop.
 
 ## Workflow
 
@@ -16,6 +18,18 @@ metadata:
 5. Design from frame and memory budgets, expected content scale, networking requirements, and platform constraints. Record the trade-offs.
 6. Use licensed or user-provided assets and preserve attribution and source details. Do not imply generated or placeholder assets are final production art.
 7. Review on the target device and input path. Capture reproducible steps for gameplay defects and compare performance against a baseline.
+
+## Keep the first game slice small
+
+- Start from the actual game brief and repository. If the player, core fantasy, genre, platform, controls, or central loop are unknown, mark those as open decisions instead of inventing them.
+- Choose one player-facing loop that can be played from input through feedback to a meaningful result. Build that end-to-end before expanding content or infrastructure.
+- Do not build engine features, multiplayer, open-world streaming, procedural systems, or a large content pipeline just because they appear in a future vision. Prototype with the existing engine first and promote a requirement only when the slice demonstrates it.
+- Use greybox or clearly labeled placeholder assets until the interaction is validated. Capture playtest observations separately from design hypotheses.
+- Do not claim a milestone is done because its roadmap or documentation is complete. Require a runnable build and its specific acceptance evidence.
+
+## Lessons from prior engine work
+
+The NOVA-to-Aurora post-mortem records the cost of building low-level infrastructure before a visible result, feature creep, premature optimization, and rebuilding editor capabilities already available in Godot. Apply those lessons to game scope: make it work, make it right, then measure and make it fast. If the request is actually about the Aurora engine fork, switch to `godot-engine-fork-development`.
 
 ## Engineering guidelines
 

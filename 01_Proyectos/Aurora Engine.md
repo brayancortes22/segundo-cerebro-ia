@@ -1,6 +1,6 @@
 # 🌌 Aurora Engine — Plataforma de Desarrollo y Creación con IA
 
-> **Estado:** 🟡 En Desarrollo Activo (Milestone 0 — Fork Foundation)  
+> **Estado verificado (2026-10-04):** 🟡 M0 incompleto. El repositorio aún no incluye el código fuente de Godot ni un build ejecutable; ver el README del repositorio y confirmar de nuevo antes de cambiar este estado.<br>
 > **Fundación:** **Godot 4.7.2-stable** (Oficialmente adoptado en ADR-0001, SHA: `ed1daf0bf001b61586d9930840f2f1394092c079`)  
 > **Organización Oficial:** [aurora-engine-labs](https://github.com/aurora-engine-labs)  
 > **Repositorio Oficial:** [aurora-engine](https://github.com/aurora-engine-labs/aurora-engine)  
@@ -96,7 +96,7 @@ El repositorio cuenta con pipelines automatizados en `.github/workflows/` docume
 
 ## 🗺️ Roadmap de Milestones
 
-* [x] **M0 — Fork Foundation:** Repositorio oficial en `aurora-engine-labs`, 3 ramas (`development`, `qa`, `production`), CI/CD completo, gobernanza de ramas y estrategia upstream lista.
+* [ ] **M0 — Fork Foundation:** Pendiente importar Godot con historial, compilar y ejecutar las pruebas baseline. El repositorio, la documentación y parte de la CI ya existen, pero no equivalen a una foundation compilada y verificada.
 * [ ] **M1 — Aurora Module Foundation:** Módulos esqueleto C++ (`modules/aurora_core/`, `modules/aurora_intelligence/`, `modules/aurora_mcp/`).
 * [ ] **M2 — Aurora Intelligence Core:** `IAgentProvider`, `AgentBridge`, terminales IPC y panel de chat integrado.
 * [ ] **M3 — Provider Authentication:** Conexión preferente por CLI oficial (Claude Code / Codex / Gemini CLI) + soporte opcional de API Key.

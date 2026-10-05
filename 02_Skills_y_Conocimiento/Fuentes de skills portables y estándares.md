@@ -70,6 +70,14 @@ Fuentes consultadas para crear la colección y referencias para mantenerla vigen
 - [Anthropic — Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents): evaluación de agentes con casos, métricas y jueces.
 - [LangGraph — Examples](https://langchain-ai.github.io/langgraph/tutorials/overview/): ejemplo de supervisores y patrones de agente en una implementación concreta.
 
+## Desarrollo asistido por IA
+
+- [Google Cloud DORA — AI Capabilities Model](https://cloud.google.com/blog/products/ai-machine-learning/introducing-doras-inaugural-ai-capabilities-model): siete capacidades asociadas a mejores resultados con IA, incluyendo contexto interno accesible, control de versiones sólido, lotes pequeños y foco en usuarios.
+- [Google Cloud DORA — 2024 State of DevOps](https://cloud.google.com/blog/products/devops-sre/announcing-the-2024-dora-report): analiza beneficios individuales de la IA junto con riesgos para throughput y estabilidad cuando faltan fundamentos de entrega.
+- [Google Antigravity — CLI Best Practices](https://www.antigravity.google/docs/cli/best-practices/): verificación local, exploración antes del plan, contexto de workspace, evidencia visual y delegación paralela.
+
+Las skills del vault están sincronizadas a Antigravity global. Para actualizarlas, usa `tools/sync-antigravity-skills.ps1`; para otros clientes, conserva el formato portable y configura su ruta global documentada.
+
 ## Documentación técnica
 
 - [Diátaxis — Documentation framework](https://diataxis.fr/): distingue tutoriales, guías prácticas, referencia y explicación para organizar documentación técnica.
@@ -79,8 +87,8 @@ Fuentes consultadas para crear la colección y referencias para mantenerla vigen
 ## Antigravity y otros IDEs con agentes
 
 - [Google Antigravity IDE — Overview](https://www.antigravity.google/docs/ide/overview/): editor, agentes asíncronos/paralelos, navegador y artefactos.
-- [Google Antigravity — Rules](https://www.antigravity.google/docs/rules/): reglas persistentes del workspace, ubicaciones y activadores `always_on`, `model_decision`, `glob` y `manual`.
-- [Google Antigravity — Agent Skills](https://antigravity.google/docs/skills?app=antigravity-ide): descubrimiento de skills y ubicación workspace/global.
+- [Google Antigravity — Rules](https://www.antigravity.google/docs/rules/): reglas persistentes del workspace o globales, ubicaciones y activadores `always_on`, `model_decision`, `glob` y `manual`.
+- [Google Antigravity — Agent Skills](https://antigravity.google/docs/skills?app=antigravity-ide): descubrimiento automático y ubicaciones workspace/global para IDE, 2.0 y CLI.
 - [Google Antigravity — Projects](https://www.antigravity.google/docs/projects/): proyectos, carpetas y worktrees aislados para agentes concurrentes.
 - [Google Antigravity — IDE extensions](https://www.antigravity.google/docs/ide/extensions/): editores con extensión oficial listados en la documentación.
 - [Google Antigravity — Workflows to skills migration](https://antigravity.google/docs/migration/workflows-to-skills): transición desde workflows a skills.

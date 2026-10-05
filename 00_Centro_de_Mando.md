@@ -10,7 +10,7 @@ Bienvenido, **Brayan Stid Cortés Lombana** (`bscl`). Esta es tu base de conocim
 
 | Proyecto | Estado | Descripción Principal | Enlace |
 | :--- | :---: | :--- | :---: |
-| **Aurora Engine** | 🟡 En Desarrollo Activo | Plataforma de desarrollo de videojuegos y cinemáticas con IA nativa y MCP sobre Godot Foundation | [[Aurora Engine]] · [[Post Mortem Nova Engine a Aurora\|Post-Mortem NOVA]] |
+| **Aurora Engine** | 🟡 M0 incompleto | El motor está documentado; aún falta importar y compilar Godot. El videojuego futuro es un proyecto separado. | [[Aurora Engine]] · [[Post Mortem Nova Engine a Aurora\|Post-Mortem NOVA]] |
 | **NASA Earth System Trend Detective** | 🟢 En Producción | Plataforma de detección de tendencias biofísicas opuestas (Space Apps 2026, Vercel & Render) | [[NASA Earth System Trend Detective]] |
 | **Autogestión SENA** | 🟢 En Producción | Plataforma integral web/móvil para gestión académica, novedades, 2FA y carga masiva Sofia Plus | [[Autogestion SENA]] · [[Autogestion SENA - Arquitectura Frontend y Hooks|Arquitectura & Hooks]] |
 | **ClickUp Task Automator** | 🟢 Activo | Conector TypeScript CLI para sincronización de los 4 Sprints con ClickUp API v2 | [[ClickUp Task Automator]] |
@@ -28,7 +28,8 @@ Bienvenido, **Brayan Stid Cortés Lombana** (`bscl`). Esta es tu base de conocim
 ## 📚 Biblioteca de Conocimiento y Skills
 
 * 🧠 **[[Catalogo de Skills (Antigravity)]]**: Catálogo de habilidades especializadas del asistente.
-  * 🧰 **[[Skills Portables - Desarrollo Multimodelo]]**: Colección de 27 skills Agent Skills para videojuegos, full stack, 3D, DevOps, nube, bases de datos, documentación técnica y agentes paralelos en IDEs; portables entre distintas IAs.
+  * 🧰 **[[Skills Portables - Desarrollo Multimodelo]]**: Colección de 32 skills Agent Skills para videojuegos, full stack, 3D, DevOps, nube, bases de datos, documentación técnica y agentes paralelos en IDEs; portables entre distintas IAs.
+  * 🔎 **[[Auditoría del cerebro y desarrollo con IA]]**: experiencia observada en los repositorios, mejoras del flujo y referencias oficiales de Google.
   * 📐 [[Archify (Diagramas de Arquitectura)]]
   * 🤖 [[Gemini AI Ecosystem]]
   * ☁️ [[Firebase Suite]]

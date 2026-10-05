@@ -1,6 +1,6 @@
 ---
 name: multi-agent-qa-testing
-description: Coordinate independent AI testers to find, reproduce, rank, and verify defects in software or agent workflows. Use for a dedicated QA pass, release candidate review, security/performance audit, or adversarial test of a multi-agent feature.
+description: Coordinate independent AI testers to find, reproduce, rank, and verify defects in software, games, engines, or agent workflows. Use for a dedicated QA pass, release candidate review, security/performance audit, or adversarial test of a multi-agent feature.
 metadata:
   version: "1.0.0"
   reviewed: "2026-10-04"
@@ -22,6 +22,13 @@ metadata:
 4. Adversarial/UX tester: tries confusing input, recovery paths, accessibility, and assumptions not covered by the happy path.
 
 Assign only roles that match the change. Each tester should work independently where possible, avoid editing implementation files, and report what was actually inspected or executed.
+
+## Game and engine coverage
+
+- For a game, include the actual target device and input path when available. Exercise a complete player loop and relevant recovery paths such as pause/resume, restart, death/failure, scene transition, save/load, focus loss, and reconnect; omit paths the game does not support.
+- For engine or renderer work, verify the pinned engine/toolchain, editor or sample project startup, the smallest relevant engine test, and a before/after baseline for any performance claim. A documentation-only repository cannot pass a runtime check.
+- For 3D assets or animation, inspect import, scale/orientation, materials, skeleton/retargeting, collisions, contact, and playback only when relevant to the changed asset. Use the project's established validation rules rather than inventing universal visual thresholds.
+- Automated agents can check reproducible behavior, but cannot prove that gameplay is fun or understandable. Report human playtesting as a separate evidence gap when player experience is an acceptance criterion.
 
 ## Required finding format
 

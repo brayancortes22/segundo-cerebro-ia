@@ -18,6 +18,13 @@ Keep the project's technical record useful to the next developer, operator, and 
 - Follow the project's language, terminology, link style, versioning, and docs tooling. Reuse existing pages rather than creating duplicate guides.
 - If no documentation structure exists, add the smallest useful structure for the change and link it from the existing entry point.
 
+## Protect the record from drift
+
+- Before reporting project status, compare the current repository with its README, roadmap, CI workflows, release artifacts, and relevant vault notes. Repository files are evidence; a plan, checklist, design document, or prior agent summary is not proof of implementation.
+- Use explicit states such as proposed, in progress, implemented, locally verified, CI-verified, and released. Attach a dated source or check result when the status matters.
+- If two authoritative documents disagree, identify the conflict and resolve the one relevant to the task. Do not silently propagate the more optimistic claim. If resolution depends on an unverified remote or a missing decision, preserve that uncertainty.
+- For milestones, describe the acceptance evidence still missing. A repository, workflow, or test file existing does not prove that a build or test passed.
+
 ## Keep technical records in sync
 
 For every completed project change, inspect which of these need an update and change only the relevant ones:

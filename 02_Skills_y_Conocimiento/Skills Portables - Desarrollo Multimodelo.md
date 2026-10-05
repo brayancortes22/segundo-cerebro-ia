@@ -7,15 +7,16 @@ updated: 2026-10-04
 ---
 # Skills portables para desarrollo con IA
 
-Esta colección reúne 27 guías ejecutables en Markdown para que distintos agentes de IA trabajen en videojuegos, aplicaciones web, experiencias 3D, infraestructura, bases de datos, MCP, documentación técnica y coordinación de IDEs. Las guías se guardan como carpetas con un archivo **SKILL.md** y metadatos compatibles con el formato abierto Agent Skills.
+Esta colección reúne 32 guías ejecutables en Markdown para que distintos agentes de IA trabajen en videojuegos, aplicaciones web, experiencias 3D, infraestructura, bases de datos, MCP, documentación técnica y coordinación de IDEs. Las guías se guardan como carpetas con un archivo **SKILL.md** y metadatos compatibles con el formato abierto Agent Skills.
 
 ## Cómo usar la colección
 
-1. En Antigravity, no necesitas etiquetar las skills: el agente descubre `.agents/skills` y la regla [skills-autoselection](../.agents/rules/skills-autoselection.md) le indica elegir y leer automáticamente las guías pertinentes para cada tarea.
-2. La regla pide usar el conjunto mínimo útil, normalmente una skill de dominio y las skills de apoyo necesarias; así no se carga todo el catálogo en cada conversación.
-3. En otro producto que admita Agent Skills, configura las carpetas en la ruta que reconozca ese cliente y confirma que también haga descubrimiento automático.
-4. Si un cliente no carga skills automáticamente, indica a la IA que lea el `SKILL.md` pertinente desde esta bóveda antes de empezar.
-5. Para APIs cambiantes, la IA debe consultar la documentación oficial de la versión usada y confirmar el stack, el alcance y las restricciones del proyecto.
+1. En Antigravity, no necesitas etiquetar las skills: las 32 carpetas de esta colección están sincronizadas a la ruta global `~/.gemini/config/skills` y la regla [skills-autoselection](../.agents/rules/skills-autoselection.md) las enruta automáticamente según cada tarea.
+2. Para actualizar la instalación global después de editar el catálogo, revisa y ejecuta `tools/sync-antigravity-skills.ps1`; `-WhatIf` muestra las operaciones sin copiarlas.
+3. La regla elige el conjunto mínimo útil, normalmente una skill de dominio y las de apoyo necesarias; así no se carga todo el catálogo en cada conversación.
+4. En otro producto que admita Agent Skills, configura las carpetas en la ruta que reconozca ese cliente y confirma que también haga descubrimiento automático.
+5. Si un cliente no carga skills automáticamente, indica a la IA que lea el `SKILL.md` pertinente desde esta bóveda antes de empezar.
+6. Para APIs cambiantes, la IA debe consultar la documentación oficial de la versión usada y confirmar el stack, el alcance y las restricciones del proyecto.
 
 El formato es texto plano y puede leerlo cualquier modelo. Antigravity documenta el descubrimiento automático de skills; en otros clientes, la carga depende de sus capacidades y configuración. Conserva cada carpeta completa al copiarla; no renombres la carpeta sin cambiar también el campo `name` del frontmatter.
 
@@ -26,6 +27,7 @@ El formato es texto plano y puede leerlo cualquier modelo. Antigravity documenta
 | [game-development-core](../.agents/skills/game-development-core/SKILL.md) | Definas alcance, prototipo, arquitectura y entrega de un videojuego sin casarte con un motor. |
 | [gameplay-systems-design](../.agents/skills/gameplay-systems-design/SKILL.md) | Diseñes mecánicas, bucles, progresión, estados y balance. |
 | [godot-game-development](../.agents/skills/godot-game-development/SKILL.md) | Trabajes en un proyecto Godot y necesites respetar escenas, nodos, recursos, exportación y APIs de su versión. |
+| [godot-engine-fork-development](../.agents/skills/godot-engine-fork-development/SKILL.md) | Modifiques un fork del código fuente de Godot, sus módulos, compilación SCons, integración upstream o CI de motor. |
 | [unity-game-development](../.agents/skills/unity-game-development/SKILL.md) | Construyas o mantengas un juego Unity en C# con escenas, prefabs, assets y paquetes. |
 | [unreal-game-development](../.agents/skills/unreal-game-development/SKILL.md) | Trabajes con Unreal Engine, Blueprints, C++, Gameplay Framework o builds. |
 | [3d-animation-pipeline](../.agents/skills/3d-animation-pipeline/SKILL.md) | Produzcas y exportes modelos, rigs, animaciones y assets para tiempo real. |
@@ -54,6 +56,8 @@ El formato es texto plano y puede leerlo cualquier modelo. Antigravity documenta
 ## Reglas compartidas
 
 - Primero inspeccionar el repositorio y confirmar motor, versiones, convenciones, comandos y estructura existentes.
+- Contrastar el estado documentado con archivos, CI y resultados verificables; marcar por separado propuestas, implementación y validación.
+- Construir primero una porción jugable pequeña; las necesidades de un videojuego no se convierten automáticamente en cambios al motor.
 - Consultar documentación oficial de la versión detectada antes de asumir que una API, opción o patrón sigue vigente.
 - Preferir cambios pequeños, reversibles y trazables; respetar arquitectura y diseño ya presentes.
 - No inventar resultados de compilación, pruebas, perfiles o revisiones. Separar lo verificado, lo supuesto y lo pendiente.
