@@ -28,6 +28,7 @@ Bienvenido, **Brayan Stid Cortés Lombana** (`bscl`). Esta es tu base de conocim
 ## 📚 Biblioteca de Conocimiento y Skills
 
 * 🧠 **[[Catalogo de Skills (Antigravity)]]**: Catálogo de habilidades especializadas del asistente.
+  * 🧰 **[[Skills Portables - Desarrollo Multimodelo]]**: Colección de 27 skills Agent Skills para videojuegos, full stack, 3D, DevOps, nube, bases de datos, documentación técnica y agentes paralelos en IDEs; portables entre distintas IAs.
   * 📐 [[Archify (Diagramas de Arquitectura)]]
   * 🤖 [[Gemini AI Ecosystem]]
   * ☁️ [[Firebase Suite]]
