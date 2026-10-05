@@ -2,8 +2,8 @@
 
 > **Estado:** 🟡 En Desarrollo Activo (Milestone 0 — Fork Foundation)  
 > **Fundación:** Godot 4.3+ (Fork Profundo con Módulos C++)  
-> **Organización Oficial:** [DABC-resource](https://github.com/DABC-resource)  
-> **Repositorio Oficial:** [aurora-engine](https://github.com/DABC-resource/aurora-engine)  
+> **Organización Oficial:** [aurora-engine-labs](https://github.com/aurora-engine-labs)  
+> **Repositorio Oficial:** [aurora-engine](https://github.com/aurora-engine-labs/aurora-engine)  
 > **Equipo Fundador:** Brayan Stid Cortés Lombana (`bscl` / @brayancortes22) & Diego Arias (@DiegoArias32)  
 > **Ecosistema Integrado:** Aurora Intelligence, Aurora MCP, Blender Production MCP, Substance Painter MCP
 
