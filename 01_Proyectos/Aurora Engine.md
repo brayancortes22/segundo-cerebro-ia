@@ -61,9 +61,20 @@ El repositorio opera bajo la política estricta de **3 ramas**:
 
 ---
 
+## 🚀 Infraestructura de CI/CD y Calidad Automatizada
+
+El repositorio cuenta con pipelines automatizados en `.github/workflows/` documentados en detalle en:
+👉 **[[DevOps y CICD Aurora Engine|DevOps, CI/CD y Automatización en Aurora Engine]]**.
+
+* **`ci.yml`:** Quality gate de 100 anti-patrones, escaneo de secretos y compilación SCons (MSVC/GCC) con caché distribuido.
+* **`branch-governance.yml`:** Validador automático que bloquea cualquier intento de merge a `production` que no provenga de `qa`.
+* **`cd-release.yml`:** Generador automático de changelog y empaquetado de releases.
+
+---
+
 ## 🗺️ Roadmap de Milestones
 
-* [x] **M0 — Fork Foundation:** Repositorio creado en `DABC-resource`, branches configuradas, atribuciones a Godot y estrategia upstream lista.
+* [x] **M0 — Fork Foundation:** Repositorio oficial en `aurora-engine-labs`, 3 ramas (`development`, `qa`, `production`), CI/CD completo, gobernanza de ramas y estrategia upstream lista.
 * [ ] **M1 — Aurora Module Foundation:** Módulos esqueleto C++ (`modules/aurora_core/`, `modules/aurora_intelligence/`, `modules/aurora_mcp/`).
 * [ ] **M2 — Aurora Intelligence Core:** `IAgentProvider`, `AgentBridge`, terminales IPC y panel de chat integrado.
 * [ ] **M3 — Provider Authentication:** Conexión preferente por CLI oficial (Claude Code / Codex / Gemini CLI) + soporte opcional de API Key.

@@ -40,6 +40,7 @@ Bienvenido, **Brayan Stid Cortés Lombana** (`bscl`). Esta es tu base de conocim
   * 🌐 [[Arquitectura de Microservicios]]: API Gateway, Saga Pattern, Circuit Breaker y Database-per-Service.
   * 🧪 [[Testing y Calidad de Software]]: Pirámide de pruebas, TDD y dobles de prueba.
   * 🚀 [[DevOps y CI-CD (GitHub Actions, Azure, Jenkins y Despliegues)]]: Pipelines automáticos, Blue-Green, Canary y pruebas de redirección HTTP.
+    * 🌌 [[DevOps y CICD Aurora Engine|CI/CD & DevOps en Aurora Engine]]: Arquitectura de 3 ramas, SCons cache, quality gates y releases automáticos.
   * 🚀 [[Desarrollo Limpio con Frameworks (React, Angular, Laravel)]]: Arquitectura limpia aplicada.
   * 📱 [[Diseno Responsivo y Adaptabilidad (Web, Mobile y TV)]]: Mobile-First, clamp(), Grid/Flexbox, Container Queries y UI para TV.
   * 🗄️ [[Diseno y Optimizacion de Bases de Datos]]: Normalización, índices, N+1, réplicas y Redis.
