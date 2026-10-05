@@ -39,8 +39,9 @@ Aurora Engine nace como una plataforma de desarrollo de videojuegos (2D y 3D), c
 ## 🛡️ Lección Aprendida y Evolución Histórica
 
 Este proyecto es el heredero directo y evolución madura de **NOVA ENGINE (DABC_Brisk3D)**.
-Para detalles técnicos completos de los errores cometidos en NOVA Engine y por qué se descartó construir desde cero, consultar:
-👉 **[[Post Mortem Nova Engine a Aurora|Post-Mortem: De Nova Engine a Aurora Engine]]**.
+Para detalles técnicos completos de los errores cometidos en NOVA Engine y las 100 reglas de validación práctica para pipelines 3D y agentes, consultar:
+👉 **[[Post Mortem Nova Engine a Aurora|Post-Mortem: De Nova Engine a Aurora Engine]]**  
+👉 **[[Reglas de Validacion y Anti Patrones 3D y Animacion|100 Reglas de Validación y Anti-Patrones: 3D, Rigging y Animación]]**
 
 | Dimensión | NOVA Engine (Lección / Error) | AURORA ENGINE (Estrategia Definitiva) |
 | :--- | :--- | :--- |
