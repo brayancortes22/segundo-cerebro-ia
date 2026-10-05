@@ -104,3 +104,19 @@ El repositorio cuenta con pipelines automatizados en `.github/workflows/` docume
 * [ ] **M5 — Aurora MCP:** Exposición del motor al exterior mediante el estándar Model Context Protocol.
 * [ ] **M6 — Agentic Editing:** Ejecución transaccional con reversibilidad completa (*Undo AI Changes*).
 * [ ] **M8 — Blender Production MCP:** Pipeline automatizado de mallas, retopología y LODs coordinado por agentes.
+
+---
+
+## 👥 Matriz de Roles y Asignación de Tareas en ClickUp
+
+> **Workspace:** `nasa project` | **Espacio:** `Aurora Engine` (ID: `90177844648`)
+
+| Hito / Dimensión | Brayan Stid Cortés Lombana (`bscl`) | Diego Arias (@DiegoArias32) |
+| :--- | :--- | :--- |
+| **M0 — Fork Foundation** | • Script de CI local (`aurora/tools/ci_local`)<br>• Branding mínimo «Aurora Engine»<br>• Validar compilación local en Windows<br>• Medir costes y tiempo de build en CI | • Importar Godot 4.7.2 con historial completo<br>• Entorno SCons ≥ 4.10.1 (`.venv`)<br>• Compilar editor Windows (RAM/Disco/CPU)<br>• Ejecutar tests baseline (`--test`)<br>• Crear `UPSTREAM.md` y chequear `THIRD_PARTY.md` |
+| **M1 — Module Foundation** | • Módulo `aurora_core` (logging, settings, version)<br>• Esqueleto `aurora_intelligence`<br>• Esqueleto `aurora_mcp`<br>• Guía técnica: «Anatomía de un módulo C++» | • Esqueleto `aurora_external_tools` + `IExternalTool`<br>• Tests unitarios doctest para los 4 módulos en CI |
+| **M2–M7 — Intelligence & MCP** | • `IAgentProvider` + `ProviderManager`<br>• `AgentBridge` (procesos, IPC, streaming)<br>• Conectores: Claude CLI y Codex JSON-RPC<br>• Tool Registry: JSON Schema y errores tipados<br>• Servidor `Aurora MCP` (stdio + HTTP streamable)<br>• Transacciones `AI_TX` + botón «Undo AI Changes»<br>• `Context Manager` y Memoria del Proyecto | • Panel `AURORA AI` en editor (Chat UI)<br>• Sistema de tareas (cola, progreso, cancelación)<br>• Almacén de API keys en Windows Credential Manager<br>• Conector `GeminiProvider` (Gemini CLI)<br>• Tools: Scene, Node, Transform, Project, Debug<br>• Tool Calls UI (Compact / Detailed / Developer)<br>• Task Planner + Validation Loop y panel de privacidad |
+| **M8–M10 — Pipeline Externo** | • Orquestación Aurora ↔ Blender MCP<br>• `Aurora Asset System` (GUIDs, metadata, deps)<br>• Historial de IA por asset | • Adaptador `BlenderTool` (retopo, LODs, UVs)<br>• Adaptador `SubstancePainterTool` y flujos de texturas<br>• Export/re-import bidireccional automático |
+| **M11–M21+ — Motor & Research** | • Presets de calidad (Low → Cinematic/RT)<br>• Edición de grafos de materiales por IA<br>• `Aurora Sequencer` para cinemáticas<br>• Profiler + Performance Agent + regresión en CI<br>• `Aurora Procedural` (scatter, biomas) y `Aurora 2D`<br>• Model Router y Orchestrator multiagente | • Auditoría PBR vs DCC y `AuroraForestBenchmark`<br>• Editor visual de materiales por nodos<br>• Atmósfera (cielo, niebla, nubes) y `Aurora Snow`<br>• Movie Renderer (EXR/video) y Cámara cinematográfica<br>• `Aurora VFX` (GPU particles) y Foliage/Terrain<br>• Retargeting/IK en Blender y Path Tracer / Meshlets |
+| **Hitos Conjuntos (DoD)** | **Ambos:** Cierre de M0, M1, M4, M5, M7. 🎯 Demo MVP 1 (M6) y MVP 2 (M8). Rituales semanales y DoD. |
+
