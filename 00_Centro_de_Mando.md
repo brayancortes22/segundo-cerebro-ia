@@ -10,7 +10,8 @@ Bienvenido, **Brayan Stid Cortés Lombana** (`bscl`). Esta es tu base de conocim
 
 | Proyecto | Estado | Descripción Principal | Enlace |
 | :--- | :---: | :--- | :---: |
-| **Aurora Engine** | 🟡 M0 incompleto | El motor está documentado; aún falta importar y compilar Godot. El videojuego futuro es un proyecto separado. | [[Aurora Engine]] · [[Post Mortem Nova Engine a Aurora\|Post-Mortem NOVA]] |
+| **BSCL AI Studio** | 🟢 En uso · mejoras en curso | Extensión VS Code: Gemini/router, agentes, búsqueda web, adjuntos y cambios de archivos reversibles | [[BSCL AI Studio]] |
+| **Aurora Engine (Glac Tinto Games)** | 🟢 M0 Cerrado · M1 en QA | Motor fork Godot 4.7.2, módulos C++, IA nativa y pipeline 3D por Diego Arias & Brayan Cortés | [[Aurora Engine]] · [[Post Mortem Nova Engine a Aurora\|Post-Mortem NOVA]] |
 | **NASA Earth System Trend Detective** | 🟢 En Producción | Plataforma de detección de tendencias biofísicas opuestas (Space Apps 2026, Vercel & Render) | [[NASA Earth System Trend Detective]] |
 | **Autogestión SENA** | 🟢 En Producción | Plataforma integral web/móvil para gestión académica, novedades, 2FA y carga masiva Sofia Plus | [[Autogestion SENA]] · [[Autogestion SENA - Arquitectura Frontend y Hooks|Arquitectura & Hooks]] |
 | **ClickUp Task Automator** | 🟢 Activo | Conector TypeScript CLI para sincronización de los 4 Sprints con ClickUp API v2 | [[ClickUp Task Automator]] |

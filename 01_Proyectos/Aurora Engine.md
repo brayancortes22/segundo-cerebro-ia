@@ -1,13 +1,15 @@
 # 🌌 Aurora Engine — Plataforma de Desarrollo y Creación con IA
 
-> **Estado verificado (2026-10-04):** 🟡 M0 incompleto. El repositorio aún no incluye el código fuente de Godot ni un build ejecutable; ver el README del repositorio y confirmar de nuevo antes de cambiar este estado.<br>
-> **Fundación:** **Godot 4.7.2-stable** (Oficialmente adoptado en ADR-0001, SHA: `ed1daf0bf001b61586d9930840f2f1394092c079`)  
+> **Estudio / Empresa Desarrolladora:** **GLAC TINTO GAMES** (Huila • Colombia • Mundos que inspiran)  
+> **Fundadores:** Brayan Stid Cortés Lombana (`bscl` / @brayancortes22) & Diego Arias (@DiegoArias32)  
+> **Estado verificado (2026-10-08):** 🟢 **M0 Completado** (Branding, local CI, baseline y tag `m0`). **M1 Integrado en QA** (Módulos `aurora_core`, `aurora_intelligence`, `aurora_mcp`, PR #2 fusionado).  
+> **Fundación:** **Godot 4.7.2-stable** (Adoptado con historial completo en ADR-0001 / ADR-0002)  
 > **Organización Oficial:** [aurora-engine-labs](https://github.com/aurora-engine-labs)  
 > **Repositorio Oficial:** [aurora-engine](https://github.com/aurora-engine-labs/aurora-engine)  
-> **Equipo Fundador:** Brayan Stid Cortés Lombana (`bscl` / @brayancortes22) & Diego Arias (@DiegoArias32)  
-> **Ecosistema Integrado:** Aurora Intelligence, Aurora MCP, Blender Production MCP, Substance Painter MCP
+> **Ecosistema Integrado:** Aurora Intelligence, Aurora MCP, Blender Production MCP (274 tools), Substance Painter MCP  
 
----
+![Glac Tinto Games Logo](../assets/glac_tinto_games_logo.png)
+
 
 ## 🧭 Visión y Filosofía de Desarrollo
 
@@ -96,8 +98,8 @@ El repositorio cuenta con pipelines automatizados en `.github/workflows/` docume
 
 ## 🗺️ Roadmap de Milestones
 
-* [ ] **M0 — Fork Foundation:** Pendiente importar Godot con historial, compilar y ejecutar las pruebas baseline. El repositorio, la documentación y parte de la CI ya existen, pero no equivalen a una foundation compilada y verificada.
-* [ ] **M1 — Aurora Module Foundation:** Módulos esqueleto C++ (`modules/aurora_core/`, `modules/aurora_intelligence/`, `modules/aurora_mcp/`).
+* [x] **M0 — Fork Foundation (Completado):** Godot 4.7.2 importado con historial completo (84k+ commits), branding mínimo aplicado, CI local (`aurora/tools/ci_local`) y tag oficial `m0`.
+* [x] **M1 — Aurora Module Foundation (Integrado en QA):** Módulos C++ `aurora_core`, `aurora_intelligence`, `aurora_mcp`, guía técnica «Anatomía de un módulo C++» (`docs/13-anatomia-de-un-modulo.md`), PR #2 aprobado y fusionado en `qa`.
 * [ ] **M2 — Aurora Intelligence Core:** `IAgentProvider`, `AgentBridge`, terminales IPC y panel de chat integrado.
 * [ ] **M3 — Provider Authentication:** Conexión preferente por CLI oficial (Claude Code / Codex / Gemini CLI) + soporte opcional de API Key.
 * [ ] **M4 — Aurora Tool Registry:** APIs seguras para manipulación de Nodos, Escenas, Luces y Transformaciones.
