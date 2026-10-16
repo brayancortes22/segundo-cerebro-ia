@@ -29,8 +29,8 @@ Bienvenido, **Brayan Stid Cortés Lombana** (`bscl`). Esta es tu base de conocim
 
 ## 📚 Biblioteca de Conocimiento y Skills
 
-* 🧠 **[[Catalogo de Skills (Antigravity)]]**: Catálogo de 45 habilidades especializadas del asistente sincronizadas entre Vault, Workspace y Configuración Global.
-  * 🧰 **[[Skills Portables - Desarrollo Multimodelo]]**: Colección de 45 Agent Skills portables: Videojuegos (Godot/Unity/Unreal), 3D Blender MCP, Full Stack (Next/Laravel), DevOps/CI-CD, Suite Elite de Diseño UI/UX (`impeccable`, `huashu-design`, `ui-ux-pro-max`, `taste-skill`), Testing E2E (`playwright-best-practices`) y Ciberseguridad Ofensiva Pentesting (`strix` / OWASP Top 10).
+* 🧠 **[[Catalogo de Skills (Antigravity)]]**: Catálogo de 51 habilidades especializadas del asistente sincronizadas entre Vault, Workspace y Configuración Global.
+  * 🧰 **[[Skills Portables - Desarrollo Multimodelo]]**: Colección de 51 Agent Skills portables: Videojuegos (Godot/Unity/Unreal), 3D Blender MCP, Full Stack (Next/Laravel), DevOps/CI-CD, Suite Elite de Diseño UI/UX (`impeccable`, `huashu-design`, `ui-ux-pro-max`, `taste-skill`), Testing E2E (`playwright-best-practices`), Ciberseguridad Pentesting (`strix` / OWASP Top 10), Suite de Ahorro y Optimización de Tokens (`caveman`, `context-budget`, `token-budget-advisor`, `prompt-caching-strategy`, `strategic-compact`) y Blueprints de Arquitectura (`software-architecture-blueprints`).
   * 🔎 **[[Auditoría del cerebro y desarrollo con IA]]**: experiencia observada en los repositorios, mejoras del flujo y referencias oficiales de Google.
   * 📐 [[Archify (Diagramas de Arquitectura)]]
   * 🤖 [[Gemini AI Ecosystem]]

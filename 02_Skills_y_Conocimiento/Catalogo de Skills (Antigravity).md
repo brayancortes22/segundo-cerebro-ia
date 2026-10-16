@@ -110,6 +110,22 @@ graph TD
   * `antigravity-guide`: Manual de comandos de terminal `agy`, atajos de teclado y workflows de IDE.
   * `agy-customizations`: Cómo crear nuevos *Skills*, reglas personalizadas (`GEMINI.md`) o plugins para entrenarme en tus propios proyectos.
 
+### 7. 🗜️ Eficiencia, Tokens y Contexto (Token Saving Suite)
+* `caveman`: Poda agresiva de tokens de salida (65-75% de ahorro) eliminando relleno conversacional sin perder rigurosidad técnica ni código.
+* `context-budget`: Auditoría y control de headroom de la ventana de contexto, detección de fugas y prevención de context bloat.
+* `token-budget-advisor`: Asignación inteligente de presupuesto de gasto de tokens según el impacto de la tarea (mínimo, equilibrado, exhaustivo).
+* `prompt-caching-strategy`: Maximización de la tasa de acierto en caché de prefijos (Prompt Caching) en LLMs (Gemini, Claude, GPT), reduciendo el costo de entrada hasta en un 90%.
+* `strategic-compact`: Compactación estructurada en fronteras lógicas de fases para mantener sesiones largas con baja ocupación de memoria.
+
+### 8. 🏗️ Arquitecturas de Software y Estructuras de Carpetas (Blueprints)
+* `software-architecture-blueprints`: Guía definitiva y matriz de decisión para elegir la arquitectura óptima según el tipo de proyecto y escala:
+  * **Feature-Sliced Design (FSD):** Para Frontend en React / Next.js / Vue.
+  * **Action-Domain-Responder (ADR):** Para Laravel 11 / PHP 8.3 con Action Classes y Service Layer (Regla 5).
+  * **Clean Architecture & Hexagonal:** Para Backend en Node, NestJS, Go y FastAPI.
+  * **Domain-Driven Game Engine Hierarchy:** Para Godot 4 y Aurora Engine.
+  * **Monorepo & Modular Monolith:** Para proyectos SaaS multi-paquete.
+  * Árboles de carpetas listos para usar y reglas anti-patrones (cero God Folders, cero acoplamientos circulares).
+
 ---
 
-> 💡 **Cómo activar una Skill:** No necesitas configurarlas manualmente; cuando me pidas una tarea relevante (por ejemplo: *"Crea un diagrama de arquitectura interactivo para Netflix TV Bridge"* o *"Configura una extensión de Chrome"*), detecto la habilidad correspondiente y la aplico automáticamente con sus mejores prácticas.
+> 💡 **Cómo activar una Skill:** No necesitas configurarlas manualmente; cuando me pidas una tarea relevante (por ejemplo: *"Crea un diagrama de arquitectura interactivo para Netflix TV Bridge"*, *"Reduce el consumo de tokens"* o *"Diseña la estructura de carpetas para un backend"*), detecto la habilidad correspondiente y la aplico automáticamente con sus mejores prácticas.

@@ -174,11 +174,27 @@ Garantizar continuidad operativa absoluta sin interrupciones por saturación de 
 
 ---
 
-## 7. Suite de Agent Skills Portables (45 Skills Estandarizadas)
+## 7. Suite de Agent Skills Portables (51 Skills Estandarizadas)
 
-El ecosistema cuenta con 45 skills modulares sincronizadas entre el Vault de Obsidian (`proyectos con ia/.agents/skills`), el workspace activo (`.agents/skills`) y la configuración global (`~/.gemini/config/skills`).
+El ecosistema cuenta con 51 skills modulares sincronizadas entre el Vault de Obsidian (`proyectos con ia/.agents/skills`), el workspace activo (`.agents/skills`) y la configuración global (`~/.gemini/config/skills`).
 
 ### 7.1. Categorización de Skills Activas
+
+* 🗜️ **Optimización de Tokens y Headroom de Contexto (Token Saving Suite):**
+  - `caveman`: Reducción radical del 65% al 75% de tokens de salida suprimiendo relleno conversacional y cortesías superfluas sin perder rigor técnico, explicaciones fundamentales ni código.
+  - `context-budget`: Monitoreo y auditoría activa del headroom de la ventana de contexto, detección de fugas y prevención de context bloat por lecturas excesivas de archivos.
+  - `token-budget-advisor`: Estrategia y ajuste del gasto de tokens según el tipo de tarea (económica, estándar, exhaustiva).
+  - `prompt-caching-strategy`: Optimización de prefijos estables para maximizar la tasa de aciertos de caché (Prompt Caching) en LLMs (Gemini, Claude, GPT), reduciendo el costo de entrada hasta en un 90%.
+  - `strategic-compact`: Compactación estructurada en límites lógicos de fase para sostener conversaciones largas sin pérdida de información crítica.
+
+* 🏗️ **Arquitecturas de Software y Organización de Código (Blueprints):**
+  - `software-architecture-blueprints`: Matriz de decisión arquitectónica y estructuras de carpetas listas para usar:
+    - **Feature-Sliced Design (FSD):** Para Frontend en React / Next.js / Vue.
+    - **Action-Domain-Responder (ADR):** Para Laravel 11 / PHP 8.3 con Action Classes y Service Layer (Regla 5).
+    - **Clean Architecture & Hexagonal:** Para Backend en Node, NestJS, Go y FastAPI.
+    - **Domain-Driven Game Engine Hierarchy:** Para Godot 4 y Aurora Engine.
+    - **Monorepo & Modular Monolith:** Para proyectos SaaS multi-paquete.
+    - Reglas anti-patrones (cero God Folders, cero dependencias circulares, SRP estricto).
 
 * 🎨 **Suite Elite de Diseño UI/UX y Design-to-Code:**
   - `impeccable`: Auditoría de calidad visual, jerarquía, micro-interacciones y erradicación de "AI slop" (Paul Bakaus).
@@ -231,6 +247,30 @@ El ecosistema cuenta con 45 skills modulares sincronizadas entre el Vault de Obs
 Para propagar cambios o nuevas skills del Vault a la configuración global de Antigravity:
 ```powershell
 powershell -ExecutionPolicy Bypass -File "tools\sync-antigravity-skills.ps1"
+```
+
+---
+
+## 8. Gateway Multi-Proveedor OmniRoute (`diegosouzapw/OmniRoute`)
+
+### 8.1. Arquitectura y Beneficios
+En cumplimiento de la **Regla 14 de GEMINI.md**, OmniRoute unifica cientos de proveedores de IA y modelos detrás de un único endpoint local:
+* **~1.62B Tokens Gratuitos / Mes:** Aprovechamiento de más de 150 proveedores con free-tiers sin costo.
+* **Cascada de Resiliencia en 4 Niveles:** Tier 1 (Suscripción) ➔ Tier 2 (API Key) ➔ Tier 3 (Modelos Económicos) ➔ Tier 4 (Tiers Gratuitos con Auto-Fallback).
+* **Compresión Integrada RTK + Caveman:** Ahorro automático de entre 15% y 95% de tokens en cada solicitud.
+* **Endpoint Local OpenAI-Compatible:** `http://localhost:20128/v1` accesible para cualquier agente o herramienta.
+* **Servidor MCP con 110 Herramientas:** Operable por `stdio` (`omniroute --mcp`) o streaming HTTP (`http://localhost:20128/api/mcp/stream`).
+
+### 8.2. Integración en `mcp_config.json`
+```json
+"omniroute": {
+  "command": "cmd.exe",
+  "args": [
+    "/c",
+    "omniroute",
+    "--mcp"
+  ]
+}
 ```
 
 ### 6.1. Propósito
