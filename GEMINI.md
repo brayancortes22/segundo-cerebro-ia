@@ -173,12 +173,27 @@
   - **Puntos de Control Previos:** Usar siempre `production.create_checkpoint` antes de refactorizaciones de rigging, retopología o fijación de deslizamiento de pies (*foot sliding*).
   - **Auditoría de Salud Previa:** Ejecutar `verify_install.py` y `environment_health.py` al iniciar sesiones de producción de assets 3D para certificar el estado de las 274 herramientas.
 
-### 20. Pipeline Design-to-Code con Google Stitch MCP y Google Cloud ADC
+### 20. Pipeline Design-to-Code con Google Stitch MCP y Autenticación Dual (API Key & ADC)
 * **Inspiración:** Google Stitch — Generación y prototipado visual UI de nueva generación potenciado por modelos Gemini.
 * **PROHIBIDO** maquetar interfaces complejas a ciegas o diseñar componentes desalineados del sistema de diseño general del proyecto.
-* **PROHIBIDO** hardcodear credenciales en la configuración local de herramientas de Google Cloud.
+* **PROHIBIDO** depender exclusivamente de tokens interactivos de `gcloud` que expiran en terminal cuando se cuenta con `STITCH_API_KEY`.
 * **OBLIGATORIO** operar el flujo de diseño a código con Stitch:
-  - **Autenticación Centralizada ADC:** Gestionar el acceso mediante Application Default Credentials de Google Cloud (`gcloud auth application-default login`) configurando el proyecto de cuotas (`stitch-dev-ia`).
-  - **Inyección de PATH en Entornos Windows:** En `mcp_config.json`, asegurar que el launcher ejecute la inyección explícita del PATH (`set PATH=...;%PATH% && npx -y stitch-mcp`) para garantizar que subprocesos de Node hereden las herramientas de Google Cloud SDK.
+  - **Autenticación Directa Permanente:** Priorizar la autenticación vía `STITCH_API_KEY` inyectada en `mcp_config.json` para garantizar conexión continua sin caducidad de sesión.
+  - **Fallback a Google Cloud ADC:** Mantener soporte secundario mediante Application Default Credentials (`gcloud auth application-default login`) con proyecto de cuotas (`stitch-dev-ia`).
   - **Consistencia de Sistemas de Diseño (`DESIGN.md`):** Definir los tokens y reglas estéticas del proyecto en archivos `DESIGN.md` y sincronizarlos con `upload_design_md` / `create_design_system_from_design_md` para garantizar coherencia en todas las pantallas generadas.
   - **Transformación de Código Post-Generación:** Tras descargar el código HTML/CSS con `fetch_screen_code`, aplicar inmediatamente las reglas **Ponytail (Regla 11)** y **Anti God-Class (Regla 5)**, refactorizando en componentes tipados de menos de 150 líneas.
+
+### 21. Sinergia Obligatoria Stitch + Skills Suite (Loop de Diseño, Pulido, E2E y DevSecOps)
+* **Inspiración:** Integración total entre modelos generativos de Google Stitch y la suite de habilidades especializadas de Antigravity (`impeccable`, `huashu-design`, `ui-ux-pro-max`, `taste-skill`, `playwright-best-practices`, `strix`).
+* **PROHIBIDO** utilizar Stitch como un generador aislado y volcar código en bruto ("AI slop") en los proyectos sin someterlo a las skills de diseño, auditoría y blindaje.
+* **PROHIBIDO** maquetar vistas complejas manualmente a ciegas sin aprovechar el tándem de Stitch + Skills.
+* **OBLIGATORIO** ejecutar rigurosamente el **Bucle de 6 Pasos (Stitch + Skills Synergy Loop)** en todo desarrollo de UI:
+  1. **Pre-Generación y Consulta de ADN Visual (`ui-ux-pro-max` + `taste-skill`):** Antes de enviar prompts a Stitch, consultar `ui-ux-pro-max` para seleccionar la paleta cromática armónica, tokens de tipografía y pautas UX según el tipo de producto (SaaS, POS, Landing, Dashboard). Configurar los diales estéticos con `taste-skill` (densidad visual, contraste, micro-espaciado) y documentarlos en `DESIGN.md`.
+  2. **Generación Visual con Google Stitch (`stitch-mcp`):** Invocar `generate_screen_from_text` (o `edit_screens`) enviando los tokens y directrices estructurados.
+  3. **Inspección Visual de Alta Fidelidad (`fetch_screen_image`):** Descargar la captura de la pantalla generada para auditoría óptica y contraste antes de tocar código.
+  4. **Auditoría Estética Implacable Anti-Slop (`impeccable` + `web-design-guidelines`):** Pasar el diseño por los criterios de Paul Bakaus (`impeccable`: `audit`, `critique`, `polish`, `harden`) y las directrices de Vercel (`web-design-guidelines`) para erradicar fondos genéricos, tipografía por defecto o bordes descuidados, certificando accesibilidad WCAG 2.2 AA.
+  5. **Modularización Ponytail (<150 líneas con `image-to-code`):** Extraer el código fuente con `fetch_screen_code` y aplicar el protocolo de `image-to-code` para descomponer la vista en componentes limpios, tipados y desacoplados de **menos de 150 a 200 líneas** (Reglas 5 y 11).
+  6. **Blindaje de Calidad E2E y DevSecOps (`playwright` + `strix`):**
+     - Generar inmediatamente la suite de pruebas automatizadas con `playwright-best-practices` (Page Object Model, selectores semánticos resilientes `getByRole`, validación de layout en Desktop 1440, Tablet 768 y Mobile 390).
+     - Validar que los formularios y mutaciones de la vista incorporen defensas multicapa (trampas invisibles Honeypot, saneamiento y rate limiting) auditados con las skills de `strix` (`owasp-top-10-testing` y `api-security-testing`).
+

@@ -130,41 +130,36 @@ Ubicación: `%USERPROFILE%\.gemini\config\mcp_config.json`
 
 ### 5.1. Arquitectura y Credenciales
 Google Stitch conecta Antigravity con los modelos de diseño de Google (Gemini 3.8 Flash UI) alojados en Google Cloud:
-* **Google Cloud SDK:** Instalación portable en `%LOCALAPPDATA%\google-cloud-sdk\bin`.
-* **Proyecto Activo y de Cuotas:** `stitch-dev-ia`.
+* **Autenticación Directa por API Key (Método Primario y Permanente):**
+  - Variable de entorno `STITCH_API_KEY` en `mcp_config.json`.
+  - Inyecta directamente `X-Goog-Api-Key` hacia `https://stitch.googleapis.com/mcp`.
+  - No requiere `gcloud auth application-default login` recurrente ni sufre caducidad de tokens interactivos.
+* **Autenticación por Google Cloud ADC (Método de Respaldo / Fallback):**
+  - Instalación portable en `%LOCALAPPDATA%\google-cloud-sdk\bin`.
+  - Proyecto de cuotas: `stitch-dev-ia`.
 
-### 5.2. Comandos de Inicialización y Renovación de Acceso
-Si el token de Google Cloud expira o se requiere re-autenticar:
-```powershell
-# 1. Login interactivo de usuario
-gcloud auth login
-
-# 2. Credenciales por defecto para aplicaciones (ADC)
-gcloud auth application-default login
-
-# 3. Asignación del proyecto de cuotas para llamadas de API
-gcloud auth application-default set-quota-project stitch-dev-ia
-
-# 4. Fijar proyecto por defecto
-gcloud config set project stitch-dev-ia
-```
-
-### 5.3. Configuración en Antigravity (`mcp_config.json`)
-Para evitar que los subprocesos de Node en Windows pierdan el acceso al binario `gcloud`:
+### 5.2. Configuración en Antigravity (`mcp_config.json`)
 ```json
 "stitch": {
-  "command": "cmd.exe",
+  "command": "node",
   "args": [
-    "/c",
-    "set PATH=C:\\Users\\NITRO ACER\\AppData\\Local\\google-cloud-sdk\\bin;%PATH% && npx -y stitch-mcp"
+    "C:/Users/NITROA~1/.gemini/stitch-mcp/index.js"
   ],
   "env": {
-    "GOOGLE_CLOUD_PROJECT": "stitch-dev-ia"
+    "STITCH_API_KEY": "TU_STITCH_API_KEY",
+    "GOOGLE_CLOUD_PROJECT": "stitch-dev-ia",
+    "GOOGLE_APPLICATION_CREDENTIALS": "C:\\Users\\NITROA~1\\AppData\\Roaming\\gcloud\\application_default_credentials.json",
+    "PATH": "C:\\Users\\NITROA~1\\AppData\\Local\\google-cloud-sdk\\bin;C:\\Windows\\System32;C:\\Windows;C:\\Program Files\\nodejs;C:\\Users\\NITROA~1\\AppData\\Roaming\\npm",
+    "APPDATA": "C:\\Users\\NITROA~1\\AppData\\Roaming",
+    "LOCALAPPDATA": "C:\\Users\\NITROA~1\\AppData\\Local",
+    "USERPROFILE": "C:\\Users\\NITROA~1",
+    "SystemRoot": "C:\\Windows",
+    "SystemDrive": "C:"
   }
 }
 ```
 
-### 5.4. Flujo de Trabajo Design-to-Code
+### 5.3. Flujo de Trabajo Design-to-Code
 1. **Crear o Cargar Sistema de Diseño:** Subir `DESIGN.md` con tokens de diseño usando `upload_design_md`.
 2. **Generar Pantalla:** Invocar `generate_screen_from_text` indicando el dispositivo (`MOBILE`, `DESKTOP`, `TABLET`).
 3. **Validar Render Visual:** Descargar el screenshot con `fetch_screen_image`.
@@ -173,6 +168,70 @@ Para evitar que los subprocesos de Node en Windows pierdan el acceso al binario 
 ---
 
 ## 6. Respaldo y Ruteo de Modelos IA (Smart AI Router)
+
+### 6.1. Propósito
+Garantizar continuidad operativa absoluta sin interrupciones por saturación de cuota o límites de tokens en los modelos principales de Gemini.
+
+---
+
+## 7. Suite de Agent Skills Portables (45 Skills Estandarizadas)
+
+El ecosistema cuenta con 45 skills modulares sincronizadas entre el Vault de Obsidian (`proyectos con ia/.agents/skills`), el workspace activo (`.agents/skills`) y la configuración global (`~/.gemini/config/skills`).
+
+### 7.1. Categorización de Skills Activas
+
+* 🎨 **Suite Elite de Diseño UI/UX y Design-to-Code:**
+  - `impeccable`: Auditoría de calidad visual, jerarquía, micro-interacciones y erradicación de "AI slop" (Paul Bakaus).
+  - `huashu-design`: Producción visual HTML nativa, 20 doctrinas de diseño y radares de evaluación estética en 5D.
+  - `ui-ux-pro-max`: Base de 67+ estilos visuales, paletas cromáticas armónicas y directrices por framework.
+  - `taste-skill`: Diales de diseño (densidad visual, varianza, control de contraste, anti-patrones).
+  - `web-design-guidelines`: Directrices oficiales de Vercel para accesibilidad y ergonomía de interfaz.
+  - `awesome-design`: Tokens, variables y sistemas de diseño curados.
+  - `image-to-code`: Protocolo de traducción visual de capturas o mockups a componentes modulares <150 líneas.
+  - `ui-ux-designer`: Especialista en arquitectura de diseño y flujos de usuario.
+  - `ux-ui-accessible-design`: Directrices estrictas WCAG 2.2 AA.
+
+* 🧪 **Testing, QA y Automatización E2E:**
+  - `playwright-best-practices`: Testing E2E senior, Page Object Model (POM), selectores resilientes (`getByRole`) y auto-waiting.
+  - `multi-agent-qa-testing`: Orquestación de pruebas concurrentes con agentes evaluadores.
+
+* 🛡️ **Seguridad Ofensiva, Pentesting y DevSecOps (Strix):**
+  - `owasp-top-10-testing`: Explotación y validación activa de OWASP Top 10 (SSRF, Inyecciones, Broken Auth).
+  - `api-security-testing`: Pentesting y auditoría de endpoints API REST y GraphQL.
+  - `find-security-vulnerabilities-in-code`: Detección estática y dinámica de fallas en código fuente.
+  - `fix-security-vulnerabilities-with-strix`: Generación automatizada de parches de remediación.
+  - `web-app-penetration-testing`: Pruebas de intrusión en aplicaciones web completas.
+  - `backend-api-data-security` y `data-security-privacy`: Cumplimiento legal (Habeas Data Colombia / SIC) y cifrado.
+  - `devsecops-supply-chain`: Protección de dependencias y cadena de suministro de software.
+
+* 🎮 **Videojuegos y Motores 3D:**
+  - `game-development-core`: Fundamentos de loop de juego, arquitectura y mecánicas.
+  - `godot-engine-fork-development`: Desarrollo C++ en fork de Godot (Aurora Engine).
+  - `godot-game-development`: Creación de videojuegos sobre Godot (`project.godot`).
+  - `unity-game-development` y `unreal-game-development`: Desarrollo en Unity y Unreal Engine.
+  - `game-performance-optimization` y `gameplay-systems-design`: Optimización de framerate y diseño de sistemas.
+  - `3d-animation-pipeline`: Automatización con Blender Production MCP (274 herramientas).
+  - `web-3d-development`: Experiencias WebGL, Three.js y Shaders en navegador.
+
+* 🌐 **Full Stack, Nube e Infraestructura:**
+  - `full-stack-web-development`: Desarrollo frontend/backend moderno (Laravel, Next.js, React).
+  - `cloud-infrastructure-architecture`, `container-platform-engineering` e `infrastructure-as-code`: Docker, Kubernetes, Terraform y Cloud.
+  - `database-engineering` y `database-operations`: Modelado relacional, índices, réplicas y operaciones SQL/NoSQL.
+  - `ci-cd-engineering`: GitHub Actions, auto-merge con PAT y pipelines de despliegue continuo.
+  - `observability-sre`: Métricas, telemetría y fiabilidad de sistemas en producción.
+
+* 📐 **Arquitectura y Agentes:**
+  - `archify`: Generación de diagramas de arquitectura en Mermaid y C4.
+  - `parallel-ide-agent-workflow`: Orquestación paralela en Antigravity IDE sin colisiones.
+  - `multi-agent-software-development`: Flujos de enjambre Ruflo (Arquitecto, Senior, QA, DevSecOps).
+  - `mcp-server-development`: Creación de servidores Model Context Protocol estándar.
+  - `code-documentation`, `project-technical-documentation` y `universal-docs`: Documentación viva y estándares de lenguaje.
+
+### 7.2. Script de Sincronización Automática
+Para propagar cambios o nuevas skills del Vault a la configuración global de Antigravity:
+```powershell
+powershell -ExecutionPolicy Bypass -File "tools\sync-antigravity-skills.ps1"
+```
 
 ### 6.1. Propósito
 Garantizar continuidad operativa absoluta sin interrupciones por saturación de cuota o límites de tokens en los modelos principales de Gemini.

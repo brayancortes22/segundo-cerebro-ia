@@ -17,6 +17,7 @@ Bienvenido, **Brayan Stid Cortés Lombana** (`bscl`). Esta es tu base de conocim
 | **ClickUp Task Automator** | 🟢 Activo | Conector TypeScript CLI para sincronización de los 4 Sprints con ClickUp API v2 | [[ClickUp Task Automator]] |
 | **Netflix TV Bridge** | 🟢 Activo | Control nativo con D-Pad para Netflix móvil en TV Box Android sin ratón | [[Netflix TV Bridge]] |
 | **Traductor de Juegos** | 🟢 En desarrollo | Traductor flotante con OCR y ML Kit offline para juegos Android (LifeAfter) | [[Traductor de Juegos]] |
+| **PlayKey** | 🟢 En Producción · v1.0.0 | Control de Spotify con botones físicos de volumen en Android (modo pantalla apagada) | [GitHub](https://github.com/brayancortes22/playkey) · [Release v1.0.0](https://github.com/brayancortes22/playkey/releases/tag/v1.0.0) |
 | **Accesorios Lilis** | 🟢 En desarrollo | Plataforma web / E-commerce con backend, frontend y arquitectura escalable | [[Accesorios Lilis]] |
 | **TikTok Live Recorder** | 🟡 Estable | Automatización con Python para detección y descarga de directos de TikTok | [[TikTok Live Recorder]] |
 | **Portafolio Personal** | 🟡 Mantenimiento | Repositorio y showcase de trabajos y habilidades | [[Portafolio Personal]] |
@@ -28,8 +29,8 @@ Bienvenido, **Brayan Stid Cortés Lombana** (`bscl`). Esta es tu base de conocim
 
 ## 📚 Biblioteca de Conocimiento y Skills
 
-* 🧠 **[[Catalogo de Skills (Antigravity)]]**: Catálogo de habilidades especializadas del asistente.
-  * 🧰 **[[Skills Portables - Desarrollo Multimodelo]]**: Colección de 32 skills Agent Skills para videojuegos, full stack, 3D, DevOps, nube, bases de datos, documentación técnica y agentes paralelos en IDEs; portables entre distintas IAs.
+* 🧠 **[[Catalogo de Skills (Antigravity)]]**: Catálogo de 45 habilidades especializadas del asistente sincronizadas entre Vault, Workspace y Configuración Global.
+  * 🧰 **[[Skills Portables - Desarrollo Multimodelo]]**: Colección de 45 Agent Skills portables: Videojuegos (Godot/Unity/Unreal), 3D Blender MCP, Full Stack (Next/Laravel), DevOps/CI-CD, Suite Elite de Diseño UI/UX (`impeccable`, `huashu-design`, `ui-ux-pro-max`, `taste-skill`), Testing E2E (`playwright-best-practices`) y Ciberseguridad Ofensiva Pentesting (`strix` / OWASP Top 10).
   * 🔎 **[[Auditoría del cerebro y desarrollo con IA]]**: experiencia observada en los repositorios, mejoras del flujo y referencias oficiales de Google.
   * 📐 [[Archify (Diagramas de Arquitectura)]]
   * 🤖 [[Gemini AI Ecosystem]]

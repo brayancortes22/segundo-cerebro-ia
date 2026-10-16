@@ -6,8 +6,8 @@ tags:
   - multiagente
 estado: 🟢 En uso · mejoras en curso
 autor: Brayan Stid Cortés Lombana (bscl)
-version: 0.9.3
-actualizado: 2026-10-08
+version: 0.9.5
+actualizado: 2026-10-13
 ---
 
 # BSCL AI Studio
@@ -20,9 +20,11 @@ actualizado: 2026-10-08
 
 ## Qué hace
 
-Chat en español con contexto del editor, agentes con objetivo/subtareas/progreso y cambios de workspace reversibles. En modo automático, la extensión intenta Gemini 3.8 Flash directamente con la clave de un proyecto Google AI Studio Free; si Gemini falla o agota su cuota, usa Smart AI Router con Ollama local y modelos OpenRouter `:free` cuyo precio de entrada/salida se confirma como $0. Groq, SambaNova, OpenCode y APIs personalizadas no se llaman aunque sus claves sigan guardadas. La clave Gemini se guarda en SecretStorage de VS Code y debe volver a introducirse tras actualizar a 0.9.3.
+Chat en español con contexto del editor, agentes con objetivo/subtareas/progreso y cambios de workspace reversibles. En modo automático, intenta Gemini 3.8 Flash y, si el usuario activa explícitamente Groq Free, Qwen 3.8 27B; después puede continuar con Smart AI Router, OpenRouter `:free` u Ollama local. Groq usa una sola solicitud simultánea y límites conservadores de contexto y respuesta. La clave Gemini y Groq se guarda en SecretStorage de VS Code. La opción automática de Groq viene apagada.
 
-El código no puede consultar ni impedir cambios en la facturación del proyecto de Google. Para conservar el costo cero, el proyecto debe mantenerse en Free y sin facturación vinculada. OpenRouter y los modelos gratuitos mantienen límites de uso; no agregar saldo.
+Se reutiliza de Figma AI Copilot la cascada Gemini/Groq/OpenRouter, junto con una explicación visible de qué proveedor conviene por tarea. Cerebras ofrece crédito de prueba limitado y OpenAI API puede facturar; Pollinations recibe prompts en un endpoint público. No se llaman en la extensión para proteger el modo sin costo y el código del workspace.
+
+La extensión no puede consultar ni impedir cambios en la facturación de Google o Groq. Para conservar el costo cero, conserva ambos proyectos en Free, sin método de pago ni facturación vinculada. OpenRouter y los modelos gratuitos mantienen límites; no agregar saldo.
 
 Antes de enviar cada modelo `:free`, el router y la extensión consultan el catálogo actual y comprueban que entrada y salida sigan en $0; si no pueden confirmarlo, bloquean la solicitud. El router prioriza Qwen, DeepSeek, MiniMax/Kimi y GLM cuando aparecen disponibles en ese catálogo. `openrouter/free` y Ollama local sirven de respaldo. No se agrega saldo ni se cambia a proveedores pagos.
 
@@ -48,3 +50,7 @@ Ollama ejecuta solo si el servicio está disponible y la memoria libre supera el
 - [Qwen3.8 27B gratuito](https://openrouter.ai/qwen/qwen3.8-27b%3Afree)
 - [Precios de la búsqueda web de OpenRouter](https://openrouter.ai/docs/guides/features/server-tools/web-search)
 - [Planes y límites gratuitos de OpenRouter](https://openrouter.ai/pricing/)
+- [Límites gratuitos de Groq](https://console.groq.com/docs/rate-limits)
+- [Modelos de Groq](https://console.groq.com/docs/models)
+- [Preguntas de facturación Groq](https://console.groq.com/docs/billing-faqs)
+- [Precios actuales de Cerebras](https://www.cerebras.ai/pricing)

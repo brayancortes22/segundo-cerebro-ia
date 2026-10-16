@@ -59,6 +59,22 @@ graph TD
   * `design-engineering`: Estándares de clase mundial de **UI Skills** (Julien Thibeaut / Addy Osmani / Emil Kowalski). Domina Baseline UI, micro-espaciado, animación 60 FPS acelerada por GPU, Core Web Vitals, accesibilidad WCAG 2.2 AA, CSS moderno (Container Queries, `:has`, `oklch`) y auditoría con React Doctor.
 * **[[Diseno_Web_UI_UX_Profesional]]**:
   * `ui-ux-designer`: Experiencia WOW, paletas armónicas, modo oscuro premium, tipografía tabular y glassmorphism.
+* **🎨 Suite Elite de Diseño UI/UX y Design-to-Code**:
+  * `impeccable`: Auditoría estética implacable anti-slop, micro-interacciones, tipografía y balance visual (Paul Bakaus).
+  * `huashu-design`: Producción visual HTML nativa, 20 doctrinas de diseño, radares de evaluación 5D y prototipos vivos.
+  * `ui-ux-pro-max`: Inteligencia de diseño con 67+ estilos (bento, neobrutalism, glass, minimal) y paletas armónicas.
+  * `taste-skill`: Diales estéticos (densidad, varianza, control de contraste, anti-patrones).
+  * `web-design-guidelines`: Directrices oficiales de Vercel para accesibilidad y ergonomía de interfaz.
+  * `awesome-design`: Tokens, variables y sistemas de diseño curados.
+  * `image-to-code`: Protocolo de traducción visual de capturas o mockups a componentes modulares <150 líneas.
+* **🧪 Testing y Automatización E2E**:
+  * `playwright-best-practices`: Testing E2E robusto, Page Object Model (POM), selectores resilientes (`getByRole`) y auto-waiting.
+* **🛡️ Ciberseguridad Ofensiva, Pentesting y DevSecOps (Strix)**:
+  * `owasp-top-10-testing`: Explotación y validación activa de OWASP Top 10 (SSRF, Inyecciones, Broken Auth).
+  * `api-security-testing`: Pentesting y auditoría de endpoints API REST y GraphQL.
+  * `find-security-vulnerabilities-in-code`: Detección estática y dinámica de fallas en código fuente.
+  * `fix-security-vulnerabilities-with-strix`: Generación automatizada de parches de remediación.
+  * `web-app-penetration-testing`: Pruebas de intrusión en aplicaciones web completas.
 * **[[Modern Web & Chrome Extensions]]**:
   * `modern-web-guidance`: Estándares modernos de CSS/HTML/JS, animaciones dirigidas por scroll, glassmorphism, selector `:has()` y Web APIs avanzadas.
   * `chrome-extensions`: Creación y publicación de extensiones para Google Chrome con Manifest V3.
