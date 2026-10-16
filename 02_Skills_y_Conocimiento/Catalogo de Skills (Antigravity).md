@@ -65,6 +65,7 @@ graph TD
   * `ui-ux-pro-max`: Inteligencia de diseño con 67+ estilos (bento, neobrutalism, glass, minimal) y paletas armónicas.
   * `taste-skill`: Diales estéticos (densidad, varianza, control de contraste, anti-patrones).
   * `spline-3d-design` ⭐: Diseño e integración de experiencias 3D interactivas para la web (heroes inmersivos, Bento 3D, React `@splinetool/react-spline` y Web Components a 60 FPS).
+  * `web-motion-animation` 🎬: Micro-animaciones de élite con Lucide Animated (350+ iconos interactivos shadcn) y orquestación con Anime.js v4 (timelines, stagger Bento grid y morphing SVG a 60 FPS).
   * `web-design-guidelines`: Directrices oficiales de Vercel para accesibilidad y ergonomía de interfaz.
   * `awesome-design`: Tokens, variables y sistemas de diseño curados.
   * `image-to-code`: Protocolo de traducción visual de capturas o mockups a componentes modulares <150 líneas.

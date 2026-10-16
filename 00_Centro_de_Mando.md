@@ -34,6 +34,7 @@ Bienvenido, **Brayan Stid Cortés Lombana** (`bscl`). Esta es tu base de conocim
   * 🔎 **[[Auditoría del cerebro y desarrollo con IA]]**: experiencia observada en los repositorios, mejoras del flujo y referencias oficiales de Google.
   * 📐 [[Archify (Diagramas de Arquitectura)]]
   * 🧊 [[Spline 3D (Diseno Web Interactivo)]]
+  * 🎬 [[Micro-Animaciones e Iconografia Interactiva (Lucide Animated & Anime.js)]]
   * 🤖 [[Gemini AI Ecosystem]]
   * ☁️ [[Firebase Suite]]
   * 🌐 [[Modern Web & Chrome Extensions]]

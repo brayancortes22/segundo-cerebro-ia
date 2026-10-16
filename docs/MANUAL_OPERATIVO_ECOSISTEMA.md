@@ -192,6 +192,7 @@ El ecosistema cuenta con 52 skills modulares sincronizadas entre el Vault de Obs
 
 * 🎨 **Suite Elite de Diseño UI/UX y Design-to-Code:**
   - `spline-3d-design`: Diseño, integración e interactividad 3D WebGL en tiempo real con Spline (heroes inmersivos, Bento 3D, React `@splinetool/react-spline` y Web Components a 60 FPS).
+  - `web-motion-animation`: Micro-animaciones e iconografía reactiva con Lucide Animated (350+ iconos interactivos) y orquestación con Anime.js v4 (timelines, stagger y SVG morphing a 60 FPS).
   - `impeccable`: Auditoría de calidad visual, jerarquía, micro-interacciones y erradicación de "AI slop" (Paul Bakaus).
   - `huashu-design`: Producción visual HTML nativa, 20 doctrinas de diseño y radares de evaluación estética en 5D.
   - `ui-ux-pro-max`: Base de 67+ estilos visuales, paletas cromáticas armónicas y directrices por framework.
