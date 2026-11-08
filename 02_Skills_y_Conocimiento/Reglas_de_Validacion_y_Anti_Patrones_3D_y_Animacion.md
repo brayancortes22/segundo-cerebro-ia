@@ -10,7 +10,7 @@
 
 Cuando un agente de IA (o un programador) genera o modifica mallas, rigs, animaciones o materiales, es muy común que **el código pase la validación técnica ("no arrojó error"), pero el resultado visual sea una aberración** (manos que agarran aire, normales invertidas, saltos en la interpolación o texturas quemadas).
 
-Este documento compila **100 fallos de la vida real** agrupados en 10 áreas críticas, transformándolos en **reglas de validación programables** para Aurora Engine:
+Este documento compila **fallos de la vida real** agrupados en áreas críticas, transformándolos en **reglas de validación programables** para Aurora Engine y Aurora Cero:
 
 ---
 
@@ -61,6 +61,19 @@ Este documento compila **100 fallos de la vida real** agrupados en 10 áreas cr�
 * **Anti-patrón #85 (Confundir Éxito Numérico con Calidad Visual):** Que un algoritmo devuelva `status: 200 OK` o `error: 0` no significa que el resultado visual sea creíble o ergonómico.
 * **Anti-patrón #91 (Auditar Rig en Rest Pose en vez de Pose Evaluada):** Comparar la pose base contra sí misma produce un falso error cero.
 * **Anti-patrón #95 (Cantar victoria antes de que el usuario vea el resultado):** Afirmar que un bug está resuelto basándose solo en métricas parciales antes de inspeccionar el viewport renderizado.
+
+---
+
+## 7. Entornos, Arquitectura Procedural y Shaders PBR (Errores 101 al 108)
+
+* **Anti-patrón #101 (Costura de Cubiertas sin Viga Cumbrera):** Ensamblar faldones a dos aguas con grosor y mantos de nieve sin viga cumbrera (`Ridge Cap Log`) genera bordes cortados, colisiones y solapamientos poligonales en el ápice.
+* **Anti-patrón #102 (Hastiales Abiertos / Gable Daylighting):** Cortar los muros exteriores de forma recta bajo una cubierta inclinada crea huecos triangulares que filtran la luz exterior. **Solución:** Escalonar hiladas de troncos adaptativas hasta el vértice.
+* **Anti-patrón #103 (Postes de Porche Flotantes sin Viga Solera):** Anclar columnas verticales directamente al tejado o dejarlas sin viga solera horizontal (`Header Beam`) de reparto de cargas.
+* **Anti-patrón #104 (Inversión de Pendientes / Techo Mariposa):** Invertir el signo de rotación de Euler en cubiertas simétricas creando un tejado cóncavo en 'V' donde el agua y la nieve se estancan en vez de desaguar.
+* **Anti-patrón #105 (Albedo Sobreexpuesto en Espacio AgX):** Usar valores lineales de color superiores a 0.20 en madera o piedra bajo cielo físico; en el render final aparecen como tonos pastel/salmón deslavados.
+* **Anti-patrón #106 (Geometría Plana sin Relieve Táctil):** Generar bloques y prismas lisos esperando que la textura haga todo el trabajo; es obligatorio usar `Bump` procedural con ondas y Voronoi de alta intensidad (0.92+).
+* **Anti-patrón #107 (Nieve y Hielo Opacos sin SSS):** Tratar la nieve como un material reflectante opaco común; sin `Subsurface Scattering` (radio asimétrico cian `0.35, 0.55, 0.85`), la nieve parece yeso o plástico blanco.
+* **Anti-patrón #108 (Cámara Hero Ciega o Desencuadrada):** Colocar la cámara en ángulos donde el elemento característico queda ocluido (ej. rueda hidráulica oculta tras la cabaña) o con longitud focal que recorte elementos verticales de altura.
 
 ---
 

@@ -40,9 +40,12 @@ foreach ($folder in $skillFolders) {
     }
 }
 
-if ($PSCmdlet.ShouldProcess((Join-Path $destinationRules 'skills-autoselection.md'), 'Copiar o actualizar regla global')) {
-    Copy-Item -LiteralPath $sourceRule -Destination (Join-Path $destinationRules 'skills-autoselection.md') -Force
+$ruleFiles = @(Get-ChildItem -LiteralPath (Split-Path -Parent $sourceRule) -Filter '*.md' -File)
+foreach ($rule in $ruleFiles) {
+    if ($PSCmdlet.ShouldProcess((Join-Path $destinationRules $rule.Name), 'Copiar o actualizar regla global')) {
+        Copy-Item -LiteralPath $rule.FullName -Destination (Join-Path $destinationRules $rule.Name) -Force
+    }
 }
 
-Write-Output "Skills procesadas: $($skillFolders.Count). Reglas procesadas: 1."
+Write-Output "Skills procesadas: $($skillFolders.Count). Reglas procesadas: $($ruleFiles.Count)."
 Write-Output 'La sincronización sobrescribe archivos con el mismo nombre, conserva otros archivos y no elimina recursos globales.'
