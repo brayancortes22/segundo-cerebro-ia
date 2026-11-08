@@ -42,6 +42,7 @@ graph TD
 | **Motor de Tablas** | Refero AAA / Tailwind Grid | Tablas de alta densidad con encabezados sticky, paginación reactiva y zero scroll horizontal. |
 | **Importación Masiva** | ExcelJS (`.xlsx`) | Generación y lectura de hojas de cálculo con validación de celdas (`DataValidation`), dropdowns y resolución difusa de IDs. |
 | **Seguridad & WAF** | Middleware C# | Protección contra bots de mutación (`POST/PUT/DELETE`), honeypots y sanitización. |
+| **Ecosistema de Testing** | k6 + WebCheck + Playwright + Unlighthouse | Pruebas de carga extrema (1,000 VUs), ciclo completo (1,601 checks 100%), blindaje perimétrico, E2E y accesibilidad WCAG. |
 
 ---
 
@@ -85,6 +86,13 @@ graph TD
 - Captura de viewports Desktop (1440px) y Mobile (390px).
 - Detección y corrección de desbordamientos visuales, solapamientos tipográficos y scrolls infinitos.
 
+### 5. Suite Multi-Herramienta de Testing y Verificación Forense
+- **k6 (Grafana Labs):** Pruebas de estrés masivo con hasta 1,000 VUs concurrentes y validación de ciclo completo con 1,601 checks aprobados al 100%.
+- **WebCheck:** Auditoría de cabeceras perimétricas (CSP, X-Frame-Options, HSTS, Permissions-Policy) y RFC 9116 (`security.txt`).
+- **Scrapling:** Simulación adversarial de scrapers para validar la efectividad de las trampas Honeypot en formularios y mutaciones de red.
+- **Playwright:** Pruebas E2E automatizadas con selectores semánticos (`getByRole`) multi-viewport (1440px y 390px).
+- **Unlighthouse & TestSprite:** Escaneo global de calidad web (Performance, Accesibilidad WCAG 2.2 AA, SEO) y exploración de user journeys asistida por IA.
+
 ---
 
 ## 🔗 Enlaces y Repositorios
@@ -92,4 +100,6 @@ graph TD
 - **Repositorio Git:** `yanbal-prestige`
 - **Estrategia de Ramas:** 3 ramas estrictas (`development` ➔ `qa` ➔ `main`).
 - **Documentación Técnica Local:** `yanbal-prestige/docs/BITACORA_QA_VISUAL_Y_OPTIMIZACIONES_2026-11-08.md`.
-- **Nota de Conocimiento:** [[QA_Visual_Nativo_Excel_Data_Validation_y_Tablas_Refero|Patrones de QA Visual y Excel DataValidation]].
+- **Notas de Conocimiento:**
+  - [[QA_Visual_Nativo_Excel_Data_Validation_y_Tablas_Refero|Patrones de QA Visual y Excel DataValidation]].
+  - [[Ecosistema_de_Testing_k6_WebCheck_Playwright_y_Unlighthouse|Ecosistema de Testing Forense (k6, WebCheck, Playwright, Unlighthouse)]].

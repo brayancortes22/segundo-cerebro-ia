@@ -12,7 +12,7 @@ Bienvenido, **Brayan Stid Cortés Lombana** (`bscl`). Esta es tu base de conocim
 | Proyecto | Estado | Descripción Principal | Enlace |
 | :--- | :---: | :--- | :---: |
 | **YouTube Autopilot** | 🟢 En Producción · Pipeline IA | Canal automatizado "Arquitectura IA": HyperFrames 3D, 90 guiones, sprites de Brayan, subida diaria a YouTube y TikTok | [[YouTube Autopilot]] · [Repo](https://github.com/brayancortes22/youtube-autopilot) |
-| **Yanbal Prestige** | 🟢 En Producción · v1.5.0 | Plataforma Web & CRM de red: .NET 10 + React 19, catálogo SKU Refero AAA, ExcelJS con listas desplegables y CMS modular | [[Yanbal Prestige]] · [[QA_Visual_Nativo_Excel_Data_Validation_y_Tablas_Refero\|Patrones QA & Excel]] |
+| **Yanbal Prestige** | 🟢 En Producción · v1.5.0 | Plataforma Web & CRM de red: .NET 10 + React 19, catálogo SKU Refero AAA, ExcelJS con listas desplegables, CMS modular y suite de testing k6/Playwright/WebCheck | [[Yanbal Prestige]] · [[QA_Visual_Nativo_Excel_Data_Validation_y_Tablas_Refero\|Patrones QA & Excel]] · [[Ecosistema_de_Testing_k6_WebCheck_Playwright_y_Unlighthouse\|Testing Forense]] |
 | **CarBeat** | 🟢 En Producción · v2.2.0 | Jukebox colaborativo para carro: Sonar Ya Dual, fallback 2D/3D WebGL para radios antiguas, React + Three.js | [[Carbeat]] · [En Vivo](https://carbeat-pi.vercel.app) |
 | **Glac Tinto Virtual Studio** | 🟢 Estable · Clean-Room | Campus virtual 2D contiguo ($4676 \times 2738$ px), 12 módulos ES6, estética Soul Knight & Stardew Valley | [[Glac Tinto Virtual Studio]] |
 | **Aurora Cero (Videojuego)** | 🟢 Producción Artística | FPS táctico 4 jugadores en UE 5.8. Elena (Tactical Medic) y texturizado PBR real medido | [[Aurora Cero (Videojuego)]] |
@@ -64,6 +64,7 @@ Bienvenido, **Brayan Stid Cortés Lombana** (`bscl`). Esta es tu base de conocim
   * 🌐 [[Arquitectura de Microservicios]]: API Gateway, Saga Pattern, Circuit Breaker y Database-per-Service.
   * 🧪 [[Testing y Calidad de Software]]: Pirámide de pruebas, TDD y dobles de prueba.
   * 🔬 [[QA_Visual_Nativo_Excel_Data_Validation_y_Tablas_Refero|QA Visual Nativo & Excel Data Validation]]: Chromium CDP en vivo sin navegadores externos, listas desplegables ExcelJS en celdas, mapeo tolerante y tablas densas Refero AAA.
+  * 🛡️ [[Ecosistema_de_Testing_k6_WebCheck_Playwright_y_Unlighthouse|Ecosistema de Testing Forense]]: k6 (concurrencia y 1,000 VUs), WebCheck (blindaje perimétrico y CSP), Scrapling (anti-bots), Playwright (E2E semántico) y Unlighthouse (auditoría global).
   * 🚀 [[DevOps y CI-CD (GitHub Actions, Azure, Jenkins y Despliegues)]]: Pipelines automáticos, Blue-Green, Canary y pruebas de redirección HTTP.
     * 🌌 [[DevOps y CICD Aurora Engine|CI/CD & DevOps en Aurora Engine]]: Arquitectura de 3 ramas, SCons cache, quality gates y releases automáticos.
   * 🚀 [[Desarrollo Limpio con Frameworks (React, Angular, Laravel)]]: Arquitectura limpia aplicada.
