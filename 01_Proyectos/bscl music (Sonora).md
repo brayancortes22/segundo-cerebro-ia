@@ -120,3 +120,23 @@ powershell -ExecutionPolicy Bypass -File scripts/build-apk.ps1 -VersionName 1.9.
 ## 🔗 Relacionado
 - [[Carbeat]] — motor de búsqueda y afines que consume la app.
 - [[PlayKey]] — control de Spotify por botones (otro proyecto del ecosistema).
+
+---
+
+## v1.14.0 â€” DJ con clave propia y recuperaciÃ³n de audio
+
+### IA fuera del servidor (BYOK)
+- Se eliminÃ³ `api/dj.js` y la variable `GEMINI_API_KEY` de Vercel: **el proyecto no gasta crÃ©ditos de nadie**.
+- Cada usuario pega su clave de Gemini en **Ajustes â†’ DJ IA con tu clave**. Se guarda en `localStorage` (`bscl_gemini_key`) y la peticiÃ³n sale del navegador directo a Google.
+- La secciÃ³n permite probar la clave, quitarla y enlaza a AI Studio para conseguir una gratis.
+- Sin clave, con clave invÃ¡lida o sin saldo: el DJ usa el motor local `djIntent.ts` y sigue reproduciendo.
+
+### RecuperaciÃ³n de reproducciÃ³n
+- El iframe de YouTube **no avisa** cuando no arranca. Ahora hay perro guardiÃ¡n: a los 7 s reintenta y a los 11 s pasa solo al audio nativo (mirror).
+- El elemento de audio principal tiene manejador de `error` (antes fallaba en silencio con 0:00).
+- Ãšltimo recurso: `/api/audio-source` resuelve la URL final del mirror en el servidor.
+- Si nada responde: banner **"El audio se quedÃ³ trabado"** con botÃ³n **Recargar**.
+
+### DiagnÃ³stico
+- El 502 de `/api/dj` era Gemini 402 (crÃ©ditos agotados), no un backend dormido. CarBeat respondiÃ³ 200 en 1.6 s.
+- Los errores de `content.js` / `adblock-picreplacement.js` eran extensiones del navegador, no la app.
